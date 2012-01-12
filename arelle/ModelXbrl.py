@@ -430,6 +430,8 @@ class ModelXbrl:
             extras["file"] = file
             extras["href"] = file
             extras["sourceLine"] = ""
+        if messageCode in self.modelManager.cntlr.errorMessages:
+            msg += ' - ' + self.modelManager.cntlr.errorMessages[messageCode]
         return (messageCode, 
                 (msg, fmtArgs) if fmtArgs else (msg,), 
                 extras)

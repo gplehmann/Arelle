@@ -111,6 +111,20 @@ class Cntlr:
         except Exception as msg:
             gettext.install("arelle", self.localeDir)
 
+        # set up a dictionary of error codes and extended error messages
+        self.errConfigPath = os.path.join(self.configDir, "error_messages.txt")
+        self.errorMessages = {}
+        if os.path.exists(self.errConfigPath):
+            with open(self.errConfigPath) as errConfigFile:
+                lineCount = 0
+                for line in errConfigFile:
+                    lineCount += 1
+                    line = line.split("\t")
+                    if len(line) >= 2:
+                        self.errorMessages[line[0]] = line[1]
+                    else:
+                        print("Line {0} of config file {1} contains insufficient data or is not tab-delimited.".format(lineCount, self.errConfigPath))
+
         from arelle.WebCache import WebCache
         self.webCache = WebCache(self, self.config.get("proxySettings"))
         self.modelManager = ModelManager.initialize(self)
