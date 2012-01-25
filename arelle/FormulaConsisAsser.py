@@ -22,8 +22,7 @@ def evaluate(xpCtx, varSet, derivedFact):
             derivedFactInferredPrecision = inferredPrecision(derivedFact)
             if derivedFactInferredPrecision == 0 and not hasProportionalAcceptanceRadius and not hasAbsoluteAcceptanceRadius:
                 if xpCtx.formulaOptions.traceVariableSetExpressionResult:
-                    xpCtx.modelXbrl.info("formula:trace",
-                         _("Consistency assertion %(id)s formula %(xlinkLabel)s fact %(derivedFact)s has zero precision and no radius is defined, skipping consistency assertion"),
+                    xpCtx.modelXbrl.uuidInfo("b454faa89eb04ca1a03378c63c0a7a22",
                          modelObject=consisAsser, id=consisAsser.id, xlinkLabel=varSet.xlinkLabel, derivedFact=derivedFact)
                 continue
     
@@ -48,8 +47,7 @@ def evaluate(xpCtx, varSet, derivedFact):
                     isSatisfied = False
             else:
                 if xpCtx.formulaOptions.traceVariableSetExpressionResult:
-                    xpCtx.modelXbrl.info("formula:trace",
-                         _("Consistency assertion %(id)s formula %(xlinkLabel)s no input facts matched to %(derivedFact)s, skipping consistency assertion"),
+                    xpCtx.modelXbrl.uuidInfo("40e5ae47344a44219577c759898a76f2",
                          modelObject=consisAsser, id=consisAsser.id, xlinkLabel=varSet.xlinkLabel, derivedFact=derivedFact)
                 continue
         elif derivedFact.isNil:
@@ -76,8 +74,7 @@ def evaluate(xpCtx, varSet, derivedFact):
                 factInferredPrecision = inferredPrecision(fact)
                 if factInferredPrecision == 0 and not hasProportionalAcceptanceRadius and not hasAbsoluteAcceptanceRadius:
                     if xpCtx.formulaOptions.traceVariableSetExpressionResult:
-                        xpCtx.modelXbrl.info("formula:trace",
-                             _("Consistency assertion %(id)s formula %(xlinkLabel)s input fact matched to %(derivedFact)s has zero precision and no radius, skipping consistency assertion"),
+                        xpCtx.modelXbrl.uuidInfo("ac24c65f7b6b4ecf80f46efa10a9a237",
                              modelObject=consisAsser, id=consisAsser.id, xlinkLabel=varSet.xlinkLabel, derivedFact=derivedFact)
                         isSatisfied = None
                         break
@@ -102,8 +99,7 @@ def evaluate(xpCtx, varSet, derivedFact):
         if isSatisfied is None:
             continue    # no evaluation
         if xpCtx.formulaOptions.traceVariableSetExpressionResult:
-            xpCtx.modelXbrl.info("formula:trace",
-                 _("Consistency assertion %(id)s result %(result)s"),
+            xpCtx.modelXbrl.uuidInfo("05f0c23b60ae43259f3ddc6db7473cdd",
                  modelObject=consisAsser, id=consisAsser.id, result=isSatisfied)
         message = consisAsser.message(isSatisfied)
         if message is not None:

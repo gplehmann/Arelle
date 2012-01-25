@@ -224,8 +224,7 @@ class CntlrGenVersReports(Cntlr.Cntlr):
                                                         '//{{{0}}}{1}'.format(
                                                             XbrlConst.verPrefixNS.get(prefix),
                                                             localName))) == 0:
-                                        modelTestcases.warning("warning",
-                                            "Generated test case %(reportName)s missing expected event %(event)s",
+                                        modelTestcases.uuidWarning("fdccd1f96ffe4ac180e2f079923b7319",
                                             reportName=reportName, 
                                             event=expectedEvent)
                         
@@ -278,8 +277,7 @@ class CntlrGenVersReports(Cntlr.Cntlr):
                             reportElement.text = "report/" + reportName
                         variationSeq += 1
             except Exception as err:
-                modelTestcases.error("exception",
-                    _("Exception: %(error)s, Excel row: %(excelRow)s"),
+                modelTestcases.uuidError("5c0d7c65f88a4f4fa6fb4b56c772a294",
                     error=err,
                     excelRow=iRow, 
                     exc_info=True)

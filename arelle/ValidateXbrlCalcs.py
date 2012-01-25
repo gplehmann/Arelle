@@ -123,8 +123,7 @@ class ValidateXbrlCalcs:
                                             roundedSum = self.roundFact(fact)
                                             roundedItemsSum = self.roundFact(fact, vDecimal=boundSums[sumBindKey])
                                             if roundedItemsSum  != self.roundFact(fact):
-                                                self.modelXbrl.error("xbrl.5.2.5.2:calcInconsistency",
-                                                    _("Calculation inconsistent from %(concept)s in link role %(linkrole)s reported sum %(reportedSum)s computed sum %(computedSum)s context %(contextID)s unit %(unitID)s"),
+                                                self.modelXbrl.uuidError("438b1d3ae5774d50ba9a50e4f1eb6823",
                                                     modelObject=sumConcept, concept=sumConcept.qname, linkrole=ELR, 
                                                     reportedSum=roundedSum, computedSum=roundedItemsSum, 
                                                     contextID=context.id, unitID=unit.id)
@@ -144,14 +143,12 @@ class ValidateXbrlCalcs:
                                             essenceUnit = self.mapUnit.get(eF.unit,eF.unit)
                                             aliasUnit = self.mapUnit.get(aF.unit,aF.unit)
                                             if essenceUnit != aliasUnit:
-                                                self.modelXbrl.error("xbrl.5.2.6.2.2:essenceAliasUnitsInconsistency",
-                                                    _("Essence-Alias inconsistent units from %(essenceConcept)s to %(aliasConcept)s in link role %(linkrole)s context %(contextID)s"),
+                                                self.modelXbrl.uuidError("162cd9a518f845039f6b4abbbb2fc266",
                                                     modelObject=essenceConcept, 
                                                     essenceConcept=essenceConcept.qname, aliasConcept=aliasConcept.qname, 
                                                     linkrole=ELR, contextID=context.id)
                                             if not XbrlUtil.vEqual(eF, aF):
-                                                self.modelXbrl.error("xbrl.5.2.6.2.2:essenceAliasUnitsInconsistency",
-                                                    _("Essence-Alias inconsistent value from %(essenceConcept)s to %(aliasConcept)s in link role %(linkrole)s context %(contextID)s"),
+                                                self.modelXbrl.uuidError("fc26f0d9c5fc4f2e92895dd272f54eaa",
                                                     modelObject=essenceConcept, 
                                                     essenceConcept=essenceConcept.qname, aliasConcept=aliasConcept.qname, 
                                                     linkrole=ELR, contextID=context.id)
@@ -161,8 +158,7 @@ class ValidateXbrlCalcs:
                             requiredConcept = modelRel.toModelObject
                             if sourceConcept in self.requiresElementFacts and \
                                not requiredConcept in self.requiresElementFacts:
-                                    self.modelXbrl.error("xbrl.5.2.6.2.4:requiresElementInconsistency",
-                                        _("Requires-Element %(requiringConcept)s missing required fact for %(requiredConcept)s in link role %(linkrole)s"),
+                                    self.modelXbrl.uuidError("356f059ab0184802a249dbc7158dfaf6",
                                         modelObject=sourceConcept, 
                                         requiringConcept=sourceConcept.qname, requiredConcept=requiredConcept.qname, 
                                         linkrole=ELR)

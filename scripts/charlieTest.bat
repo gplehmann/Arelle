@@ -4,7 +4,7 @@ rem to run from installer version use this
 rem @set ARELLE=c:\Progra~1\Arelle\arelleCmdLine.exe
 
 rem to run from source use this
-@set ARELLE=c:\python32\python -marelle.CntlrCmdLine
+@set ARELLE=C:\Python32\python.exe -marelle.CntlrCmdLine
 @set PYTHONPATH=..
 
 

@@ -101,18 +101,15 @@ class ValidateHmrc(ValidateXbrl.ValidateXbrl):
                              (unit is not None and f2.unit is not None and unit.isEqualTo(f2.unit))) and
                             f1.xmlLang == f2.xmlLang and 
                             f1.effectiveValue != f2.effectiveValue):
-                            modelXbrl.error("HMRC.14",
-                                _("Inconsistent duplicate facts %(fact)s context %(contextID)s and %(contextID2)s."),
+                            modelXbrl.uuidError("e32d842d94cf4e7d8f6e8b836199fe1b",
                                 modelObject=f1, fact=f1.qname, contextID=f1.contextID, contextID2=f2.contextID)
 
             if isAccounts:
                 if "StartDateForPeriodCoveredByReport" not in busItems:
-                    modelXbrl.error("HMRC.02",
-                        _("Period Start Date (uk-bus:StartDateForPeriodCoveredByReport) is missing."), 
+                    modelXbrl.uuidError("a1fc333a3f7b4b1b824f8b8801504859",
                         modelObject=modelXbrl)
                 elif busItems["StartDateForPeriodCoveredByReport"].value < "2008-04-06":
-                    modelXbrl.error("HMRC.02",
-                        _("Period Start Date (uk-bus:StartDateForPeriodCoveredByReport) must be 6 April 2008 or later."),
+                    modelXbrl.uuidError("5bedbcabb6384fab8136e2f7175b7046",
                         modelObject=modelXbrl)
                 for items, name, msg, ref in (
                           (busItems,"EntityCurrentLegalOrRegisteredName",
@@ -141,23 +138,19 @@ class ValidateHmrc(ValidateXbrl.ValidateXbrl):
                         modelXbrl.error("HMRC.{0}".format(ref), msg, modelObject=modelXbrl)
                 if ("DateApprovalAccounts" not in gaapItems and
                     "DateAuthorisationFinancialStatementsForIssue" not in ifrsItems):
-                    modelXbrl.error("HMRC.08",
-                        _("Name of Director Approving Balance Sheet (uk-gaap:NameDirectorSigningAccounts OR ifrs:ExplanationOfBodyOfAuthorisation) is missing."),
+                    modelXbrl.uuidError("90c955c7ab6b4128a92b910337db54c1",
                         modelObject=modelXbrl)
                 if ("ProfitLossForPeriod" not in gaapItems and
                     "ProfitLoss" not in ifrsItems):
-                    modelXbrl.error("HMRC.11",
-                        _("Profit or Loss for the period (uk-gaap:ProfitLossForPeriod OR ifrs:ProfitLoss) is missing."),
+                    modelXbrl.uuidError("6b1eb16fd38f4623938ebffc24518061",
                         modelObject=modelXbrl)
                 if companyReferenceNumberContexts:
                     if "UKCompaniesHouseRegisteredNumber" not in busItems:
-                        modelXbrl.error("HMRC.16.1",
-                            _("Company Reference Number (uk-bus:UKCompaniesHouseRegisteredNumber) is missing."), 
+                        modelXbrl.uuidError("19c9150240f7482180cb17c2ea7cdd88",
                             modelObject=modelXbrl)
                     else:
                         factCompNbr = busItems["UKCompaniesHouseRegisteredNumber"].value
                         for compRefNbr, contextIds in companyReferenceNumberContexts.items():
                             if compRefNbr != factCompNbr:
-                                modelXbrl.error("HMRC.16.2",
-                                    _("Context entity identifier (%(entityIdentifier)s) does not match Company Reference Number (uk-bus:UKCompaniesHouseRegisteredNumber) Location: Accounts (context id %(contextID)s)."),
+                                modelXbrl.uuidError("fac9bc036dad4807b49646597dc0ddb2",
                                     modelObject=modelXbrl, entityIdentifier=compRefNbr, contextID=",".join(contextIds))

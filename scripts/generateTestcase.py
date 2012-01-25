@@ -7,7 +7,7 @@ import os, fnmatch, xml.dom.minidom, datetime
 
 def main():
     # the top directory where to generate the test case (and relative file names in the variations)
-    topDirectory = "C:\\temp\\editaxonomy20110314"
+    topDirectory = "C:\\Users\\Greg\\WebFilings"
     testcaseName = "EDInet test cases"
     ownerName = "Hugh Wallis"
     ownerEmail = "hughwallis@xbrl.org"

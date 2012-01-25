@@ -219,8 +219,7 @@ def validate(modelXbrl, elt, recurse=True, attrQname=None):
         if type is not None and attrQname is None:
             missingAttributes = type.requiredAttributeQnames - presentAttributes
             if missingAttributes:
-                modelXbrl.error("xmlSchema:attributesRequired",
-                    _("Element %(element)s type %(typeName)s missing required attributes: %(attributes)s"),
+                modelXbrl.uuidError("a842b5445d384fb88d672c4b7bfa0240",
                     modelObject=elt,
                     element=elt.elementQname,
                     typeName=baseXsdType,
@@ -345,8 +344,7 @@ def validateValue(modelXbrl, elt, attrTag, baseXsdType, value, isNillable=False,
                 sValue = value
         except ValueError as err:
             if attrTag:
-                modelXbrl.error("xmlSchema:valueError",
-                    _("Element %(element)s attribute %(attribute)s type %(typeName)s value error: %(value)s, %(error)s"),
+                modelXbrl.uuidError("33af807501b041dda25af2bad7ab9c09",
                     modelObject=elt,
                     element=elt.elementQname,
                     attribute=XmlUtil.clarkNotationToPrefixedName(elt,attrTag,isAttribute=True),
@@ -354,8 +352,7 @@ def validateValue(modelXbrl, elt, attrTag, baseXsdType, value, isNillable=False,
                     value=value,
                     error=err)
             else:
-                modelXbrl.error("xmlSchema:valueError",
-                    _("Element %(element)s type %(typeName)s value error: %(value)s"),
+                modelXbrl.uuidError("edb4be7c9a1f4559a9f9776dd3d9f48d",
                     modelObject=elt,
                     element=elt.elementQname,
                     typeName=baseXsdType,

@@ -430,8 +430,8 @@ class ModelXbrl:
             extras["file"] = file
             extras["href"] = file
             extras["sourceLine"] = ""
-        if messageCode in self.modelManager.cntlr.errorMessages:
-            msg += ' - ' + self.modelManager.cntlr.errorMessages[messageCode]
+        if messageCode in self.modelManager.cntlr.extendedMessages:
+            msg += ' - ' + self.modelManager.cntlr.extendedMessages[messageCode]
         return (messageCode, 
                 (msg, fmtArgs) if fmtArgs else (msg,), 
                 extras)
@@ -443,13 +443,27 @@ class ModelXbrl:
         else:
             self.logCountInfo += 1
             self.log.info(*logArgs, exc_info=args.get("exc_info"), extra=extras)
-                    
+
+    def uuidInfo(self, id, **args):
+        messageCode, logArgs, extras = self.logArguments(self.modelManager.cntlr.errorMessages[id][1], self.modelManager.cntlr.errorMessages[id][0], args)
+        if messageCode == "asrtNoLog":
+            self.errors.append(args["assertionResults"])
+        else:
+            self.logCountInfo += 1
+            self.log.info(*logArgs, exc_info=args.get("exc_info"), extra=extras)
+
     def warning(self, codes, msg, **args):
         messageCode, logArgs, extras = self.logArguments(codes, msg, args)
         if messageCode:
             self.logCountWrn += 1
             self.log.warning(*logArgs, exc_info=args.get("exc_info"), extra=extras)
-                    
+
+    def uuidWarning(self, id, **args):
+        messageCode, logArgs, extras = self.logArguments(self.modelManager.cntlr.errorMessages[id][1], self.modelManager.cntlr.errorMessages[id][0], args)
+        if messageCode:
+            self.logCountWrn += 1
+            self.log.warning(*logArgs, exc_info=args.get("exc_info"), extra=extras)
+
     def error(self, codes, msg, **args):
         messageCode, logArgs, extras = self.logArguments(codes, msg, args)
         if messageCode:
@@ -457,8 +471,20 @@ class ModelXbrl:
             self.logCountErr += 1
             self.log.error(*logArgs, exc_info=args.get("exc_info"), extra=extras)
 
+    def uuidError(self, id, **args):
+        messageCode, logArgs, extras = self.logArguments(self.modelManager.cntlr.errorMessages[id][1], self.modelManager.cntlr.errorMessages[id][0], args)
+        print(self.modelManager.cntlr.errorMessages[id][1], self.modelManager.cntlr.errorMessages[id][0])
+        if messageCode:
+            self.errors.append(messageCode)
+            self.logCountErr += 1
+            self.log.error(*logArgs, exc_info=args.get("exc_info"), extra=extras)
+
     def exception(self, codes, msg, **args):
         messageCode, logArgs, extras = self.logArguments(codes, msg, args)
+        self.log.exception(*logArgs, exc_info=args.get("exc_info"), extra=extras)
+
+    def uuidException(self, id, **args):
+        messageCode, logArgs, extras = self.logArguments(self.modelManager.cntlr.errorMessages[id][1], self.modelManager.cntlr.errorMessages[id][0], args)
         self.log.exception(*logArgs, exc_info=args.get("exc_info"), extra=extras)
                     
         

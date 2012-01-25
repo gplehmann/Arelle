@@ -1,0 +1,525 @@
+719eaf32b4fa4a5ebb4baba288ec1678	First column must be Label or Name: %(col1)s	arelle:firstCsvFactListColumn
+b0b4d042e0c940b09f950e8f1b463226	Failed to save output %(type)s to %(file)s: \s%(error)s	arelle:htmlIOError
+29f2e7ad33d04f16ac08a73c3afeb984	Element %(element)s %(xlinkLabel)s has unauthorized xml:lang='%(lang)s'	arelle:langError
+ae22dc6126534e64992a7ce1febf018f	Multiple output instances for formula %(xlinkLabel)s, to names %(instanceTo)s, %(instanceTo2)s	arelle:multipleOutputInstances
+9e64e9bb4ce3459f932277cc8b2575ed	Testcase %(id)s %(name)s document not loaded: %(file)s	arelle:notLoaded
+db1e1f971d3d4b93a2f5d930b925de71	Testcase %(id)s %(name)s DTSes not loaded, unable to generate versioning report: %(file)s	arelle:notLoaded
+421b536bc75e449dbbfd2dcef07f9abc	Testcase %(id)s %(name)s expected result instance not loaded: %(file)s	arelle:notLoaded
+c72711e363fd4914bb467702d42c4778	Unrecognized columns: %(cols)s	arelle:unrecognizedCsvFactListColumn
+32152cb073de45d190605eb6c6af2742	RSS item %(company)s, %(form)s, %(date)s, exception: %(error)s	arelle.rssError
+fdc53ef637304041b12fe52b66b78e6a	RSS item %(company)s %(form)s document not loaded: %(date)s	arelle.rssWatch
+d95199f90e994139a1cf9b587e80e69c	Test %(name)s result %(result)s	cfcn:testFail
+54c23dba54884d1789cf049155b4d732	Test %(name)s result %(result)s	cfcn:testPass
+810f17c789b6459e9f59c62f3490b576	Disallowed character '%(text)s' in file %(file)s at line %(line)s col %(column)s	EFM.5.2.1.1
+16592e96e72345a9b0f4668607e5ca3e	Disallowed entity code %(text)s in file %(file)s line %(line)s column %(column)s	EFM.5.2.2.6	GFM.1.01.02
+0a18bb773853433d8df5e409ed1f8550	Href %(elementHref)s may only have shorthand xpointers	EFM.6.03.06	GFM.1.01.03
+d520cd3bc29c4e80bc0f75810d20bc81	Prohibited base attribute: %(attribute)s	EFM.6.03.11	GFM.1.1.7
+b2ddd4c570254b40a113de0cb36e0429	Fact %(fact)s of context %(contextID)s has an XBRL error	EFM.6.04.03	GFM.2.01.01
+94c39d475f1f41d28b894614677ca9f4	Invalid entity identifier scheme: %(scheme)s	EFM.6.05.01	GFM.1.02.01
+030ba9669b2c4d5a8ca34ab976703fa7	Invalid entity identifier %(entityIdentifierName)s: %(entityIdentifer)s	EFM.6.05.02	GFM.1.02.02
+e79bb91c7dec4373964a30daa373021d	Multiple %(entityIdentifierName)ss: %(entityIdentifer)s, %(entityIdentifer2)s	EFM.6.05.03	GFM.1.02.03
+ee343fbdd0d9487fbc60f78a093a948d	%(elementName)s element not allowed in context Id: %(context)s	EFM.6.05.04	GFM.1.02.04	SBR.NL.2.3.5.06
+4ed8de4978744266ad5dd0811738e119	Segment of context Id %(context)s has disallowed content: %(content)s	EFM.6.05.05	GFM.1.02.05
+bb57b0bcb99f4ef99a352c042372c745	Context ID %(context)s is equivalent to context ID %(context2)s	EFM.6.05.07	GFM.1.02.07
+62e9167018d047de96d62ab814936a2d	The instance document contained a context(s) %(contextIDs)s that was(are) not used in any fact.	EFM.6.05.08	GFM.1.02.08
+d300970043bc4b7d9d3630c7c425bb4c	Context {0} endDate and {1} startDate have a duration of one day; that is inconsistent with document type {2}.	EFM.6.05.09	GFM.1.2.9
+9a84dc12301542a89c4659cf002ddc71	Context %(contextID)s endDate and %(contextID2)s startDate have a duration of one day; that is inconsistent with document type %(documentType)s.	EFM.6.05.09	GFM.1.2.9
+6639a6f8696648a5ba50eceef4480316	Context %(contextID)s startDate and %(contextID2)s end (instant) have a duration of one day; that is inconsistent with document type %(documentType)s.	EFM.6.05.10
+d9100047e33544b3ad8688d200365dfc	Units %(unitID)s and %(unitID2)s are equivalent.	EFM.6.05.11	GFM.1.02.10
+7858743e2c004bd0be9ee4c9a05167f4	Facts %(fact)s of context %(contextID)s and %(contextID2)s are equivalent.	EFM.6.05.12	GFM.1.02.11
+aab70246cb544e3dbf583051ad9e17f1	Fact %(fact)s of context %(contextID)s has text of xml:lang '%(lang)s' without corresponding %(lang2)s text	EFM.6.05.14	GFM.1.02.13
+e713c5390bab4a368c5a89c33a503f92	Fact %(fact)s contextID %(contextID)s has text which causes the XML error %(error)s	EFM.6.05.15	GFM.1.02.14
+8d8a03d151a848b28b21c5c9e8d4823f	Fact %(fact)s of context %(contextID) has a '>' in text, not well-formed XML: '%(text)s'	EFM.6.05.15
+2205f8b601c74c8eba830495d0dba485	Fact %(fact)s of context %(contextID) has text which causes the XML error %(error)s line %(line)s column %(column)s	EFM.6.05.15
+55745d13a1594a518deb5733e249165e	Fact %(fact)s of context %(contextID) has text which causes the XML fatal error %(error)s line %(line)s column %(column)s	EFM.6.05.15
+31ed755c916144beadec4eac81b343c5	Fact %(fact)s contextID %(contextID)s has disallowed entity %(entity)s	EFM.6.05.16	GFM.1.2.15
+30f333f82c3d4ed29292e605f304404c	Fact %(fact)s of context %(contextID) has an invalid external reference in '%(attribute)s' for <%(element)s>	EFM.6.05.16
+995ed224a1fc452086ffbc7bcbc1ffa5	Fact %(fact)s of context %(contextID) has attribute '%(attribute)s' not allowed for <%(element)s>	EFM.6.05.16
+71d19575004449aca3b402be0e389793	Fact %(fact)s of context %(contextID) has disallowed html tag: <%(element)s>	EFM.6.05.16
+378b6da8cf8f45d4b110d0f88083eac8	Fact %(fact)s of context %(contextID) has javascript in '%(attribute)s' for <%(element)s>	EFM.6.05.16
+991efba1de904f1c8fdead53069cc91e	Numeric fact %(fact)s of context %(contextID)s has a precision attribute '%(precision)s'	EFM.6.05.17	GFM.1.02.16
+a20a5bb5f1954cd2acd91cc0c61419e3	Required context (no segment) not found for document type %(documentType)s.	EFM.6.05.19	GFM.1.02.18
+3c6343cf07c4461a80bd6332306a3a8a	%(elementName)s is in the default context is incorrect '%(date)s'	EFM.6.05.20	GFM.3.02.01
+77e2af125a86465b82d477a638d9208a	%(elementName)s is not found in the default context	EFM.6.05.20	GFM.3.02.01
+56d1640d9c4c484da4da402d70d794d2	AmendmentDescription can not be provided when AmendmentFlag is not true in context %(contextID)s	EFM.6.05.20
+6636bdf7f5b042cb81d7935d56901ffa	AmendmentFlag is true in context %(contextID)s so AmendmentDescription is also required	EFM.6.05.20
+32bf176761a34b64bba2bb53160ff2fd	DocumentType '%(documentType)s' of context %(contextID)s inapplicable to submission form %(submissionType)s	EFM.6.05.20
+8c4a49b67b354c7eb2d8629b20288bdf	DocumentType '%(documentType)s' of context %(contextID)s was not recognized	EFM.6.05.20
+602f0be3612e4c6cb5f93fd0a6701d72	DocumentType is required and was not found in the default context	EFM.6.05.20
+865face2f5bd47e1a51aad138c4f3dd6	dei:%(elementName)s is required for DocumentType '%(documentType)s' of context %(contextID)s	EFM.6.05.21
+c9dc9f19e8bd4115a9651d2486752ec5	dei:%(elementName)s %(value)s is must match the context entity identifier %(entityIdentifer)s	EFM.6.05.23	GFM.3.02.02
+c5dfee5023214c0b8e3b19a05e83239b	dei:%(elementName)s %(value)s must match submission: %(filerIdentifer)s	EFM.6.05.23	GFM.3.02.02
+cc50dd1cf845427599493eccadeca155	dei:%(elementName)s %(prefix)s should be a case-insensitive prefix of: %(value)s	EFM.6.05.24	GFM.3.02.02
+4ff71d4219784f9885794f1c642f2e39	parameters for cikList and cikNameList different list entry counts: %(cikList)s, %(cikNameList)s	EFM.6.05.24	GFM.3.02.02
+0a03d8a0d4ac42f49af76245d38221e7	Domain item %(fact)s in context %(contextID)s may not appear as a fact	EFM.6.05.25
+b00a314e1e24441a8bb8552d1a5e03df	dei:EntityCommonStockSharesOutstanding is required for DocumentType '%(documentType)s' but missing a default-context because only one class of stock	EFM.6.05.26
+7d44b4bd6eca4b76bd7141188d54a54a	dei:EntityCommonStockSharesOutstanding is required for DocumentType '%(documentType)s' but missing for a non-default-context fact	EFM.6.05.26
+886c704c21ec4c63bdcfaa63cf05a5fe	dei:EntityCommonStockSharesOutstanding is required for DocumentType '%(documentType)s' but missing in these stock classes: %(stockClasses)s	EFM.6.05.26
+8588aa3afd774333afdec10734e4514a	dei:EntityCommonStockSharesOutstanding is required for DocumentType '%(documentType)s' but not in the default context because there are multiple classes of common shares	EFM.6.05.26
+d2e6eb3b175e421383150278c3e4f4ff	dei:EntityCommonStockSharesOutstanding is required for DocumentType '%(documentType)s' but only one per stock class %(stockClass)s	EFM.6.05.26
+b343db4ffb8d43fbb61c2f927a63c7fb	dei:EntityCommonStockSharesOutstanding is required for DocumentType '%(documentType)s' in stock class %(stockClass)s with measurement date %(date)s	EFM.6.05.26
+15b766c7d38546f084be16cbd5e2b3c9	dei:EntityCommonStockSharesOutstanding is required for DocumentType '%(documentType)s' in the default context because there are not multiple classes of common shares	EFM.6.05.26
+b5231aaaeab9437cb79fb9144241b5c2	FootnoteLink %(footnoteLinkNumber)s has disallowed child element %(elementName)s	EFM.6.05.27	GFM.1.02.19
+0c949a7b23cf40d8835e9dbc83588832	FootnoteLink %(footnoteLinkNumber)s has disallowed role %(linkrole)s	EFM.6.05.28	GFM.1.02.20
+13cc954833d54735b6b01f40dc5ea3f0	Footnote %(xlinkLabel)s has disallowed role %(role)s	EFM.6.05.28	GFM.1.02.20
+a35fbbd215964da18f0b0fa5fd636825	Footnote %(xlinkLabel)s is missing a role	EFM.6.05.28	GFM.1.02.20
+bd44aad8badc4e4383ade87682b5fd50	FootnoteLink %(footnoteLinkNumber)s loc %(locNumber)s has disallowed role %(role)s	EFM.6.05.29	GFM.1.02.21
+6b64e3529b074af6b619985020f32e2d	FootnoteLink %(footnoteLinkNumber)s arc %(arcNumber)s has disallowed arcrole %(arcrole)s	EFM.6.05.30	GFM.1.02.22
+7b5449c0845e4cd48d5f30655600903b	FootnoteLink %(footnoteLinkNumber)s loc %(locNumber)s has disallowed href %(locHref)s	EFM.6.05.32	GFM.1.02.23
+df4a2ddb81544b8e81fb264721db3729	FootnoteLink %(footnoteLinkNumber)s footnote %(xlinkLabel)s has no linked fact	EFM.6.05.33	GFM.1.02.24
+682701ec52ec432e9d3e70c02f128ca2	Footnote %(xlinkLabel)s has an invalid external reference in '%(attribute)s' for <%(element)s>: %(value)s	EFM.6.05.34
+12052d2d47a440cea5149087888f33d1	Footnote %(xlinkLabel)s has attribute '%(attribute)s' not allowed for <%(element)s>	EFM.6.05.34
+1715e8dbf56a4b68bf07f8d1eb687c93	Footnote %(xlinkLabel)s has disallowed html tag: <%(element)s>	EFM.6.05.34
+830497d3cfd0453c81fd8d5b1138b7ad	Footnote %(xlinkLabel)s has javascript in '%(attribute)s' for <%(element)s>	EFM.6.05.34
+ad35a26eba4b4ea791e9692b09638ae5	Unit has a measure  with localName length (%(length)s) over 200 bytes long in utf-8, %(measure)s.	EFM.6.05.36
+28ff84c2bf5b4014bd464beb227f02bb	Taxonomy schema %(schema)s includes %(include)s, only import is allowed	EFM.6.07.01	GFM.1.03.01	SBR.NL.2.2.0.18
+b02edf4099d44f69be6e9e837e1e8d0c	Taxonomy schema %(schema)s namespace %(targetNamespace)s is a disallowed authority	EFM.6.07.03	GFM.1.03.03
+38fc3b96348e43b9a30f75e4607a68c3	Taxonomy schema %(schema)s namespace %(targetNamespace)s must have format http://{authority}/{versionDate}	EFM.6.07.04	GFM.1.03.04
+f488d29d7dbb426b8a7d035b8d62f082	Taxonomy schema %(schema)s namespace %(targetNamespace)s prefix %(prefix)s must not have an '_'	EFM.6.07.07	GFM.1.03.07
+6de7f77e8e3144f7a16c2089a2e9ac2e	Taxonomy schema %(schema)s contains an embedded linkbase	EFM.6.07.08	GFM.1.03.08
+b3dddf0990964feb99d4f4a6e30efd63	RoleType %(roleType)s does not match authority %(targetNamespaceAuthority)s	EFM.6.07.09	GFM.1.03.09
+a2bcafe90e984d648086beb374351f1f	RoleType %(roleType)s is defined in multiple taxonomies	EFM.6.07.10	GFM.1.03.10
+a02927ffad4e46c09de7d39d901cdcab	RoleType %(roleType)s missing used on %(usedOn)s	EFM.6.07.11	GFM.1.03.11
+860ae0a3ac7e4335b7559483b08c41f1	RoleType %(roleType)s definition \%(definition)s\ must match {Sortcode} - {Type} - {Title}	EFM.6.07.12	GFM.1.03.12-14
+b7e95e5c3efa47fe993dafade47f3877	ArcroleType %(arcroleType)s does not match authority %(targetNamespaceAuthority)s	EFM.6.07.13	GFM.1.03.15
+d83bfca825b44b6d8c951b7a759186f2	ArcroleType %(arcroleType)s is defined in multiple taxonomies	EFM.6.07.14	GFM.1.03.16
+1ad7ccc99e9c46b7b4df8413828060eb	ArcroleType %(arcroleType)s definition must be non-empty	EFM.6.07.15	GFM.1.03.17
+7a46b3780cf84c7a92a39e82c2db0c2f	Concept %(concept)s is also defined in standard taxonomy schema schema %(standardSchema)s	EFM.6.07.16	GFM.1.03.18
+00fef850cf7947f380835ef5b252a7d0	Concept %(concept)s id %(id)s should be $(requiredId)s	EFM.6.07.17	GFM.1.03.19
+d5ed4c1d6cfe485c84f51fe4fe78de36	Taxonomy schema %(schema)s element %(concept)s nillable %(nillable)s should be 'true'	EFM.6.07.18	GFM.1.03.20
+f7f0767f11f14058a58efac1e712b6f3	Concept %(concept)s is a tuple	EFM.6.07.19	GFM.1.03.21
+6d9ef91abfa44084baeba70ef4f60db3	Concept %(concept)s has typedDomainRef %(typedDomainRef)s	EFM.6.07.20	GFM.1.03.22
+5863af574dd34c1b87b3c1099659e3a3	Taxonomy schema %(schema)s element %(concept)s is abstract but period type is not duration	EFM.6.07.21	GFM.1.03.23
+20507a9b98a444d496f5ffc287bbd321	Concept %(concept)s  is abstract but type is not xbrli:stringItemType	EFM.6.07.22	GFM.1.03.24
+55321dbf2feb481fa8fec20763efe43b	Concept %(concept)s must end in Axis to be in xbrldt:dimensionItem substitution group	EFM.6.07.23	GFM.1.03.25
+0e3ef0eda03d4644b620acd6993fdedf	Concept %(concept)s must end in Table to be in xbrldt:hypercubeItem substitution group	EFM.6.07.24	GFM.1.03.26
+bda86e4842de497c9d49728985bacfd9	Concept %(concept)s has disallowed substitution group %(substitutionGroup)s	EFM.6.07.25	GFM.1.03.27
+fb5470b8b8f74e249a2eef5b478ce88a	Concept %(concept)s is a LineItems but not abstract	EFM.6.07.26	GFM.1.03.28
+75fc8248320742ecb53b8583b6e3eb10	Concept %(concept)s must end with Domain or Member for type of domainItemType	EFM.6.07.27	GFM.1.03.29
+c2b598c783624009ad28cb67b75e7431	Concept %(concept)s is a domainItemType and must be periodType duration	EFM.6.07.28	GFM.1.03.30
+578fbc0e5dd34f53bed5923db014e77e	Schema %(element)s has a name length (%(length)s) over 200 bytes long in utf-8, %(name)s.	EFM.6.07.29
+de94655c13304dc5a8b453fc3a743537	Schema %(element)s %(attribute)s length (%(length)s) is over 255 bytes long in utf-8 %(roleURI)s	EFM.6.07.30
+a3cc6d1beeae440885c3612ba4a9ab00	Schema targetNamespace length (%(length)s) is over 255 bytes long in utf-8 %(targetNamespace)s	EFM.6.07.30
+0ab48559bb1d444398d1e70209dfef0b	Ineffective arc %(arc)s in \nlink role %(linkrole)s \narcrole %(arcrole)s \nfrom %(conceptFrom)s \nto %(conceptTo)s \n%(ineffectivity)s	EFM.6.09.03	GFM.1.04.03	SBR.NL.2.3.4.06
+e0b220f502c44a1cb8f50477a9f05495	%(element)s is missing an xlink:role	EFM.6.09.04	GFM.1.04.04
+c7aa115b71094c92bc3955ac4234e950	Resource %(xlinkLabel)s role %(role)s is not a standard taxonomy role	EFM.6.09.05	GFM.1.04.05	SBR.NL.2.3.10.14
+7a5cf9f5f23e4859af3d6926cb4f89e5	Arcrole %(refURI)s arcroleRef %(xlinkHref)s must be a standard taxonomy	EFM.6.09.06	GFM.1.04.06
+e0855636043a4398a8d54704468f6bb0	Extended element %(element)s must be the same as %(element2)s	EFM.6.09.07	GFM:1.04.07	SBR.NL.2.3.0.11
+d4b9c600765d4c2f957718e9cd2a3d71	Arc from %(xlinkFrom)s to %(xlinkTo)s priority %(priority)s is not an integer	EFM.6.09.09	GFM.1.04.08
+d49714f3afb44071a64f39fe878447f0	Arc from %(xlinkFrom)s to %(xlinkTo)s priority %(priority)s must be less than 10	EFM.6.09.09	GFM.1.04.08
+535dcc00edc9440b94117ebe1dffb271	A label linkbase is required but was not found	EFM.6.10.01	GFM.1.05.01
+ef8ce23a52234e5a867c9e1118e701bc	Concept %(concept)s is missing an %(lang)s standard label.	EFM.6.10.01	GFM.1.05.01
+e7d55a98a1b04d0194f3a8b5ccc3fbdb	Concept %(concept)s has duplicated labels for role %(role)s lang %(lang)s.	EFM.6.10.02	GFM.1.5.2	SBR.NL.2.2.1.05
+cec6925f337341019fce9977293078d1	Concept %(concept)s is missing an %(lang)s label for role %(role)s.	EFM.6.10.03	GFM.1.5.3
+485197f7d7ec414086b3ef68101dc29a	Same labels for concepts %(concept)s and %(concept2)s for %(lang)s standard role: %(text)s.	EFM.6.10.04	GFM.1.05.04
+3269d06d4a564c3f813e475234eef183	Concept %(concept)s of a standard taxonomy cannot have a documentation label: %(text)s	EFM.6.10.05	GFM.1.05.05	SBR.NL.2.1.0.08
+899cf0552574497da30d6a9050e790ed	Label for concept %(concept)s role %(role)s length %(length)s must be shorter than 511 characters: %(text)s	EFM.6.10.06	GFM.1.05.06
+f026aa1c34014ee9b05be4f45031c7cc	Label for concept %(concept)s role %(role)s lang %(lang)s is not trimmed: %(text)s	EFM.6.10.08	GFM.1.05.08
+58533bed127a4c73b82a07e8a5f48844	PresentationArc from %(xlinkFrom)s to %(xlinkTo)s must have an order	EFM.6.12.01	GFM.1.06.01	SBR.NL.2.3.4.04
+fef5fd010bdd4285b3cf6e521e6a2320	Duplicate presentation relations from concept %(conceptFrom)s for order %(order)s in base set role %(linkrole)s to concept %(conceptTo)s and to concept %(conceptTo2)s	EFM.6.12.02	GFM.1.06.02	SBR.NL.2.3.4.05
+7f9bebfa2c82446dbfbf68b49d00f17c	Concept %(concept)s does not participate in an effective presentation relationship	EFM.6.12.03	GFM.1.6.3
+ddd26e7f4eea4f44ad5e236f64b1fd6c	Concept %(concept)s missing %(lang)s preferred labels for role %(preferredLabel)s	EFM.6.12.04	GFM.1.06.04
+2a8a2bebfbe74c69b4afbadad1bfaef4	Concept %(concept)s has duplicate preferred label %(preferredLabel)s in link role %(linkrole)s	EFM.6.12.05	GFM.1.06.05	SBR.NL.2.3.4.06
+4f4d710cae83459f8f8c61397c163fa6	CalculationArc from %(xlinkFrom)s to %(xlinkTo)s must have an order	EFM.6.14.01	GFM.1.07.01
+bde90a2b3b584e9c8de3c746eb2b6fc4	CalculationArc from %(xlinkFrom)s to %(xlinkTo)s must have a weight	EFM.6.14.02	GFM.1.07.02
+2c93c771afdf491bb08c7ac4cf70f5c6	CalculationArc from %(xlinkFrom)s to %(xlinkTo)s weight %(weight)s must be 1 or -1	EFM.6.14.02	GFM.1.07.02
+8e313883480348d18cfef2a9e00f876f	Calculation relationship period types mismatched in base set role %(linkrole)s from %(conceptFrom)s to %(conceptTo)s	EFM.6.14.03	GFM.1.07.03
+4c1b5b040a8b4415b550369a71913e2f	Calculation relationships have a directed cycle in base set role %(linkrole)s starting from %(concept)s	EFM.6.14.04	GFM.1.07.04
+aefaaf42d834489b8da6d4e91021d954	Used calculation relationship from %(conceptFrom)s to %(conceptTo)s does not participate in an effective presentation relationship	EFM.6.14.05	GFM.1.7.5
+eba246b8ce524e0593bd8a1b360acd22	DefinitionArc from %(xlinkFrom)s to %(xlinkTo)s must have an order	EFM.6.16.01	GFM.1.08.01
+cc614e3611b34ac6b536d391b6effd6e	Definition relationship from %(conceptFrom)s to %(conceptTo)s in role %(linkrole)s requires domain item target	EFM.6.16.03	GFM.1.08.03
+1bc0e3062b4d443b8a6abfeb3907ca2e	Dimension relationships have an undirected cycle in DRS role %(linkrole)s \nstarting from table %(hypercube)s, \naxis %(dimension)s, \npath %(path)s	EFM.6.16.04	GFM.1.08.04
+799383b05187485da300a382b2aa9013	Domain-member primary-item relationships have an undirected cycle in DRS role %(linkrole)s \nstarting from %(conceptFrom)s, \npath %(path)s	EFM.6.16.04	GFM.1.08.04
+086215ce9d1141c4bc6c2236f7627fcf	Multiple tables (%(hypercubeCount)s) DRS role %(linkrole)s, source %(concept)s, only 1 allowed	EFM.6.16.05	GFM.1.08.05
+ab10ad519bec42dcbe9aae3871afc4bf	Not all hypercube %(hypercube)s in DRS role %(linkrole)s, does not have closed='false'	EFM.6.16.06	GFM.1.08.06
+db6d376d96274f3d8943c0b511bcef4d	Negative table axis %(dimension)s in DRS role %(linkrole)s, not in any positive table in same role	EFM.6.16.07	GFM.1.08.08
+b08b6d01e8ec4fc3a8c316f8d4fc114f	Not all hypercube %(hypercube)s in DRS role %(linkrole)s, is also the target of a positive hypercube	EFM.6.16.08	GFM.1.08.08
+60311851aee24a1eabbaacc317cb4092	Axis %(dimension)s in DRS role %(linkrole)s, missing targetrole consecutive relationship	EFM.6.16.09	GFM.1.08.09
+929944d431f340e3921885685420a638	Domain member %(concept)s in DRS role %(linkrole)s, missing targetrole consecutive relationship	EFM.6.16.09	GFM.1.08.09
+36a370ff033a409eb12c3034dcaf41f0	Table %(hypercube)s in DRS role %(linkrole)s, missing targetrole consecutive relationship	EFM.6.16.09	GFM.1.08.09
+fd0ea2541a3c42f2a7113ef105c5abbc	References for extension concept %(concept)s are not allowed: %(text)s	EFM.6.18.01	GFM.1.9.1
+e1d99e17b8c74cd2ba23a2fa0620f328	References for standard taxonomy concept %(concept)s are not allowed in an extension linkbase: %(text)s	EFM.6.18.02	SBR.NL.2.1.0.08
+5f6707b76201465e8b9898da19ae2a9d	Namespace: %(namespace)s disallowed schemaLocation %(schemaLocation)s	EFM.6.22.02	GFM.1.1.3	SBR.NL.2.1.0.06
+11c0723cb1fe40a4a14fe32384d9b9e1	Namespace: %(namespace)s disallowed schemaLocation blocked %(schemaLocation)s	EFM.6.22.02	GFM.1.1.3	SBR.NL.2.1.0.06
+d563f73cdc9b4ecaa64c093cf868072e	Prohibited file for filings %(blockedIndicator)s: %(url)s	EFM.6.22.02	GFM.1.1.3	SBR.NL.2.1.0.06
+10e9b4315062431e8830e7db2bdb68ee	References for conflicting standard taxonomies %(namespaceConflicts)s are not allowed in same DTS	EFM.6.22.03
+5f1baf08cbac41d181b233c5d3ef3346	Inline XBRL footnote %(footnoteID)s is missing an xml:lang attribute	EFM.N/A	GFM:1.10.13
+1ca0f77038f4492ca7100b6e52697140	Inline XBRL non-empty footnote %(footnoteID)s is not referenced by any fact	EFM.N/A	GFM:1.10.15
+4a4a588bd4fc41e2a3fdc33b27ad4075	Inline XBRL footnote %(footnoteID)s must be in non-displayable div due to arcrole %(arcrole)s	EFM.N/A	GFM:1.10.16
+26440b9dcafe4df8b13d4fff00200cc0	Duplicate calculations relations from concept %(conceptFrom)s for order %(order)s in base set role %(linkrole)s to concept %(conceptTo)s and to concept %(conceptTo2)s	EFM.N/A	GFM.1.07.06
+ad57e8f8c9234f0789b0fa17b7085332	ix-numeric Fact %(fact)s of context %(contextID)s has a sign or currency symbol ""%(value)s"" in ""%(text)s""	EFM.N/A	GFM.1.10.18
+69fa1e8c8400455bae36ef5a669cdcde	Parse error in %(name)s error: %(error)s \n%(source)s	err:XPST0003
+7954ed9453c8486f9e546cbbc7da6f9e	Undefined variable dependency in message %(xlinkLabel)s, %(name)s	err:XPST0008
+15502442b5aa40af844e154448127837	QName prefix not defined for %(name)s	err:XPST0081
+e1e9bac4a8204661b33894b7049d42c2	QName prefix not defined for variable reference $%(variable)s	err:XPST0081
+884ca48e14cc4611b07adc841a2ea748	wildcard prefix not defined for %(token)s	err:XPST0081
+739a0199a7c54f81bcd9e5fbfee38d6b	Instance validation exception: %(error)s, instance: %(instance)s	exception
+130f1206e24749aa853200d9ff26b667	Testcase validation exception: %(error)s, testcase: %(testcase)s	exception
+b0b4ed86e574493dabb7ba7e42b0c534	Validation exception: \s%(error)s	exception
+c3a145ac034041978b3d5c65380a3bd3	Versioning report exception: %(error)s, testcase: %(reportFile)s	exception
+c329fca9815a4a9793151151b2eb4462	File can not be loaded: %(fileName)s	FileNotLoadable
+7ca8a9c84c0d425ebe48e85551bb3f7c	Invalid formula object %(element)s	formula:internalError
+2acce4bd0844490ca73f690b16756beb	%(assertionType)s Assertion %(id)s evaluations : %(satisfiedCount)s satisfied, %(notSatisfiedCount)s not satisfied	formula:trace
+6ccfe16abbbe4232a2f6b87ed5ec13ae	%(cfi)s output \nExpression: \n%(expression)s	formula:trace
+e48775236edd4c709002bc26a9640da1	%(cfi)s output \nResult: \n%(expression)s	formula:trace
+cf997bf9e87d42bb8217b376894179bb	%(cfi)s step %(step)s \nExpression: \n%(expression)s	formula:trace
+2feeba1cab3a4683a3cfd8821b61fa1f	%(cfi)s step %(step)s \nResult: \n%(expression)s	formula:trace
+f67a61fcc1974a7081ea14f641c01ec9	%(name)s result %(result)s	formula:trace
+7cc0842a52cb44228a0203173b62c3f4	%(variableSetType)s %(xlinkLabel)s \nResult: \n%(result)s	formula:trace
+c13eb2b712f047acac0aaee995aae113	%(variableType)s %(variable)s: bound value %(result)s	formula:trace
+2c64bf8e0e514df388d13f07e394e555	Code %(name)s %(source)s	formula:trace
+1df1a57a3d9342a2be649915bf906fa5	Consistency Assertion %(id)s evaluations : %(satisfiedCount)s satisfied, %(notSatisfiedCount)s not satisfied	formula:trace
+46e0d038f69f45df9830e9de1e514ab9	Existence Assertion %(xlinkLabel)s \nResult: %(result)s	formula:trace
+d0d9ef692d744787a8606c74aed3b925	Fact Variable %(variable)s %(filter)s filter %(aspect)s passes %(factCount)s facts	formula:trace
+2c9f8188b2bb4231810d426b96c320fc	Fact Variable %(variable)s %(filter)s filter dimension matching passes %(factCount)s facts	formula:trace
+72946d1e7e9e4a4c87cdcd1d2672d8a0	Fact Variable %(variable)s %(filterType)s %(filter)s filter %(xlinkLabel)s passes %(factCount)s facts	formula:trace
+a8d1a9df71794d1d991d0899334c1211	Fact Variable %(variable)s filtering: start with %(factCount)s facts	formula:trace
+3cce79e48d814368acdd29f629961602	Fact Variable %(variable)s: fallbackValue result %(result)s	formula:trace
+ee3a1f10b4494098be12fe63f83bc3c0	Fact Variable %(variable)s: filters result %(result)s	formula:trace
+caa575c195d1463c9b0e666ae7c8a89d	General Variable %(variable)s: select result %(result)s	formula:trace
+f65bc7b0a09e47ee8c0431baf4f6982b	Parameter %(name)s input value %(input)s	formula:trace
+66e090d3c1e3413e983a3ee124867fd3	Parameter %(name)s select result %(result)s	formula:trace
+f30516f963a8430697172befc94dcd23	Source %(name)s %(source)s	formula:trace
+e559b9e9d4d348d684ffb892104ff6bf	Variable instances processing order: %(dependencies)s	formula:trace
+23d99d0906e540e196f50aa03fb2c08f	Variable set %(xlinkLabel)s \nPrecondition %(precondition)s \nResult: %(result)s	formula:trace
+b427a1a6dade4ae0b20b0b8e44b0c980	Variable set %(xlinkLabel)s had no xpCtx.evaluations	formula:trace
+1126f754a1054ff38935d0173421741d	Variable set %(xlinkLabel)s skipped evaluation, all fact variables have fallen back	formula:trace
+c0e6adab570c43819f816c44abe6d280	Variable set %(xlinkLabel)s skipped non-different or fallback evaluation, duplicates another evaluation	formula:trace
+9e2998931fd34ff982fac8f8127d8655	Variable set %(xlinkLabel)s, instance dependences %(dependencies)s	formula:trace
+667d2cd7cae54b2ca7d15d29fbbb7bcd	Variable set %(xlinkLabel)s, variable %(name)s, dependences %(dependencies)s	formula:trace
+e62ad8c921d54974b726c382c35c936f	Variable set %(xlinkLabel)s, variables order: %(dependencies)s	formula:trace
+c030994905a54ac3ba51b8ba876469ca	Context id %(context)s %(elementName)s invalid content %(value)s	GFM.1.02.25
+1df56581acdb4ae9a95a687c65dbb0eb	Fact %(fact)s of context %(contextID)s decimals %(decimals)s value %(value)s causes Value Error exception.	GFM.1.02.26
+aaeb5a5c27844c63a5268ec1e1f1fb64	Fact %(fact)s of context %(contextID)s decimals %(decimals)s value %(value)s has insignificant digits %(value2)s.	GFM.1.02.26
+e48f696cf8b64946a84ad77d966281e1	Duplicate definitions relations from concept %(conceptFrom)s for order %(order)s in base set role %(linkrole)s to concept %(conceptTo)s and to concept %(conceptTo2)s	GFM.1.08.10
+0f88a16360684fa5860b600c14380804	Disallowed xbrldt:usable='false' attribute on %(arc)s relationship from concept %(conceptFrom)s in base set role %(linkrole)s to concept %(conceptTo)s	GFM.1.08.11
+c73907a8e1b843628e597384e5781198	XML declaration encoding %(encoding)s and meta content type encoding %(metaContentTypeEncoding)s must both be utf-8	GFM.1.10.4
+018674272f154533a06f6b2253b3b8aa	dei:%(elementName)s is required in the default context	GFM.3.02.01
+a1fc333a3f7b4b1b824f8b8801504859	Period Start Date (uk-bus:StartDateForPeriodCoveredByReport) is missing.	HMRC.02
+5bedbcabb6384fab8136e2f7175b7046	Period Start Date (uk-bus:StartDateForPeriodCoveredByReport) must be 6 April 2008 or later.	HMRC.02
+90c955c7ab6b4128a92b910337db54c1	Name of Director Approving Balance Sheet (uk-gaap:NameDirectorSigningAccounts OR ifrs:ExplanationOfBodyOfAuthorisation) is missing.	HMRC.08
+6b1eb16fd38f4623938ebffc24518061	Profit or Loss for the period (uk-gaap:ProfitLossForPeriod OR ifrs:ProfitLoss) is missing.	HMRC.11
+e32d842d94cf4e7d8f6e8b836199fe1b	Inconsistent duplicate facts %(fact)s context %(contextID)s and %(contextID2)s.	HMRC.14
+19c9150240f7482180cb17c2ea7cdd88	Company Reference Number (uk-bus:UKCompaniesHouseRegisteredNumber) is missing.	HMRC.16.1
+fac9bc036dad4807b49646597dc0ddb2	Context entity identifier (%(entityIdentifier)s) does not match Company Reference Number (uk-bus:UKCompaniesHouseRegisteredNumber) Location: Accounts (context id %(contextID)s).	HMRC.16.2
+c7ecf807441b47cdacd4ec1ee880bfb3	%(fileName)s: file error: %(error)s	IOerror
+94856497d40648bf87c820557446b8b2	Inline XBRL tupleRef %(tupleRef)s not found	ixerr:tupleRefMissing
+7102dc927d72438a9ab97f1035535503	Parsing terminated in %(name)s due to error: %(error)s \n%(source)s	parser:unableToParse
+a170a2ca13ef405e8f99c1403bf4255d	Schema contains XSD 1.1 content ""%(element)s""	SBR.NL.2.2.0.01
+03aa344b279c4306a432259f664d1797	Schema element %(concept)s contains XSD 1.1 datatype ""%(xsdType)s""	SBR.NL.2.2.0.01
+161b2e9e98ca4a11b9c48f06270e7dfb	%(docType)s xml version must be ""1.0"" but is ""%(xmlVersion)s""	SBR.NL.2.2.0.02
+cbef121ecc5f47c9842d95ec49dfd393	%(docType)s encoding must be ""utf-8"" but is ""%(xmlEncoding)s""	SBR.NL.2.2.0.03
+80e018a4c3e14d829ebda1974d7297fe	%(docType)s must have comment node only on line 2	SBR.NL.2.2.0.04
+38d466bb38ad4b4791362ed65196a0b4	%(docType)s must have only one comment node before schema element	SBR.NL.2.2.0.05
+c4fc6a958cc740bc90d1b6a8b6939972	%(fileType)s must have only one comment node before schema element: ""%(value)s""	SBR.NL.2.2.0.05
+568ca8e58e25498abe58871a306f10b2	Schema element is not prefixed: ""%(element)s""	SBR.NL.2.2.0.06
+a54e29cf5fbf48039fc7f117eb8abe72	Linkbase element is not prefixed: ""%(element)s""	SBR.NL.2.2.0.06
+6472fb2f36be49acb46f2b530a73ce66	Schema element must have a targetNamespace attribute	SBR.NL.2.2.0.08
+05ad8135bab545e28cbfa71d202207a5	Schema element attributeFormDefault must be ""unqualified"" and elementFormDefault must be ""qualified""	SBR.NL.2.2.0.09
+0a2e469041a34e1498c8ea694e1299ac	Schema element must not have a %(attribute)s attribute	SBR.NL.2.2.0.10
+f88b15bd384e4ccd806e7408f4a053e5	%(docType)s namespace declaration ""%(declaration)s"" is not used	SBR.NL.2.2.0.11
+36809afa850e4e51a39877c9415639bf	Annotation/appinfo record must be be behind schema and before import	SBR.NL.2.2.0.12
+c3963d348e6a4d27ac2e0009da42791b	Schema file annotation missing appinfo element must be be behind schema and before import	SBR.NL.2.2.0.12
+60a52dfe84e94642b2b82cf78899e705	Annotation/appinfo record must be followed only by import	SBR.NL.2.2.0.14
+fd8ced187b5f4cf28ce3d13ba1e45c53	A schema import schemas of which no content is being addressed: %(importedFile)s	SBR.NL.2.2.0.15
+ab949af42fff4eb391956493e7a5dc07	Namespace: %(namespace)s disallowed schemaLocation %(schemaLocation)s	SBR.NL.2.2.0.17
+08d8c3ec43e74cc298ed84f85fc2899c	Namespace: %(namespace)s disallowed schemaLocation blocked %(schemaLocation)s	SBR.NL.2.2.0.17
+9e905c5ecfe74f58b26554c8cc022d75	Prohibited file for filings %(blockedIndicator)s: %(url)s	SBR.NL.2.2.0.17
+9b48a19662ae4a0ab679bb8bc511c472	%(fileType)s element %(element)s must not have xmlns:%(prefix)s	SBR.NL.2.2.0.19
+34d17694f21f4f13ae58d2fca1e71761	%(fileType)s element %(element)s must not have %(prefix)s:%(localName)s	SBR.NL.2.2.0.20
+2bd23e5b3cb440fb8cf0a7306bdcb6d3	%(fileType)s element %(element)s must not have custom namespace %(namespace)s	SBR.NL.2.2.0.20
+54b416f60a804dbc9c1a3460f93dd088	Schema has %(annotationsCount)s xs:annotation elements, only 1 allowed	SBR.NL.2.2.0.22
+56659065ec794d36a39ddbbb9f2f192c	Taxonomy schema may only define one of these: %(contents)s	SBR.NL.2.2.1.01
+3df5f092bdf64fe78e8ba2b87f814d67	Taxonomy schema must be a DTS entrypoint OR define linkroles OR arcroles OR link:parts OR context fragments OR abstract items OR tuples OR non-abstract elements OR types OR enumerations OR dimensions OR domains OR hypercubes	SBR.NL.2.2.1.01
+54617d1d8794453795f951337d397ca7	A schema having a label linkbase MUST define concepts	SBR.NL.2.2.1.02
+b9b32b8aea6a4b47932403afc0be8eee	A schema that defines non-abstract items MUST have a linked (2.1) reference linkbase AND/OR a label linkbase with @xlink:role=documentation	SBR.NL.2.2.1.03
+eda1ec1fd28c47908d20ad46ce617609	Entrypoint schema must have a presentation linkbase	SBR.NL.2.2.10.01
+1d737554be2f4ffebfc9061f3208c69f	DTS concept %(concept)s not referred to by presentation relationship.	SBR.NL.2.2.10.03
+b450ad822ee843b285f94019a6698bee	Appinfo contains disallowed non-link element %(element)s	SBR.NL.2.2.11.05
+ab16e657f5c04bfbbad6ac79740251d3	xs:attribute must not be used	SBR.NL.2.2.11.06
+3acfa126d6c545efb886a14409f63306	ComplexType contains disallowed xs:choice element	SBR.NL.2.2.11.09
+68fcffd6cc2145379be4bdd158fdb578	ComplexContent is disallowed	SBR.NL.2.2.11.10
+c6061321baf941c2a684e99f370aa147	Schema concept definition is not at the root level: %(concept)s	SBR.NL.2.2.2.01
+0788abfdaf16400eb2b271293d8fbd9e	Concept %(concept)s is also defined in standard taxonomy schema %(standardSchema)s without a general-special relationship	SBR.NL.2.2.2.02
+1a78fa3feed440c3b3ed27219d72e9cf	Concept %(concept)s is an abstract tuple	SBR.NL.2.2.2.03
+9e3daa7acbfd447b9b25010b15f073f6	Concept %(concept)s not referred to by presentation relationship.	SBR.NL.2.2.2.04
+c4d77921c19e4e48ac2f24c3e875310d	Concept %(concept)s has a substitutionGroup of a non-standard concept.	SBR.NL.2.2.2.05
+b308ccd62ac44f2eb12426a0cc20dfcf	Tuple %(concept)s has a tuple cycle	SBR.NL.2.2.2.07
+d3124e1c2c9e4f1589235aae814453bb	Schema %(element)s must have minOccurs and maxOccurs	SBR.NL.2.2.2.14
+888b3f5f71ae4c9aad30dcbef6acbbca	Schema %(element)s must have %(attrName)s	SBR.NL.2.2.2.14
+340fd16490634cdb926aad192f3ec63a	Abstract root concept %(concept)s must have nillable='false'	SBR.NL.2.2.2.16
+4864e78cb04a41698443d012fd50481b	Tuple %(concept)s must have nillable='false'	SBR.NL.2.2.2.17
+5b06bd6d6a87428e93a32445cc662b04	Abstract domain item %(domain)s in DRS role %(linkrole)s is not a primaryDomainItem	SBR.NL.2.2.2.19
+0e13aed179db48a1acf5becb8f031381	Domain item %(domain)s in DRS role %(linkrole)s is not a domainItem	SBR.NL.2.2.2.19
+fcc8dd3e3f6341adb1ff346df66e2108	Domain item %(domain)s in DRS role %(linkrole)s, in dimension %(dimension)s is not a domainItem	SBR.NL.2.2.2.19
+a759f888e0c64c45a5d8f2228cebf33b	Domain member item %(member)s in DRS role %(linkrole)s is not a domainMemberItem	SBR.NL.2.2.2.19
+8aac264848e545888d6057b265f5c9b5	Abstract root concept %(concept)s must have type='xbrli:stringItemType'	SBR.NL.2.2.2.21
+784b1b7cd14a4b7da91ddb6974d018e4	Abstract concept %(concept)s must not have a balance attribute	SBR.NL.2.2.2.22
+a0750e104d82415bb16505721a642d18	Non-monetary concept %(concept)s must not have a balance attribute	SBR.NL.2.2.2.24
+e44d36b573db4be4b56c05fdb6b96e77	Concept %(concept)s missing standard label in local language.	SBR.NL.2.2.2.26
+2183824c1770496bbfdf59a893d2741a	Concept %(concept)s must have a documentation label or reference	SBR.NL.2.2.2.28
+ad8f14f8a8df4751a7bfb919f719198d	Tuple concept %(concept)s must have maxOccurs='1'	SBR.NL.2.2.2.30
+e7e9332218f3489b9ce4e76509753730	Abstract concept %(concept)s must not be a child of a tuple	SBR.NL.2.2.2.31
+c9b04918a6d84040a4a544929e894ca5	Tuple %(concept)s must not be abstract	SBR.NL.2.2.2.32
+bdac169a84cf437bafd45fab12f872eb	Schema %(element)s must have %(attrName)s = ""1""	SBR.NL.2.2.2.33
+73f1273c15b94bd083ad7227f4ca028d	%(element)s usedOn must not be link:calculationLink	SBR.NL.2.2.3.01
+183db34dff584317b78ffd7befb4981a	%(element)s usedOn %(usedOn)s not addressed for role %(role)s	SBR.NL.2.2.3.02
+9a14a2e8dc844ea8a775da1ebb87fc83	Link RoleType %(roleType)s missing a generic standard label	SBR.NL.2.2.3.03
+4ac68d04fbc04d9ea1e415cccf702349	Link RoleType %(roleType)s definition does not match NL standard generic label, \ndefinition: %(definition)s \nNL label: %(label)s	SBR.NL.2.2.3.04
+9b312ec256bf4a5a93ea7d4af37705b4	ELR role %(linkrole)s, for hypercube %(hypercube)s has another parent %(concept)s	SBR.NL.2.2.3.05
+aa84e36482e74c4199f4816574ea08e7	Presentation linkrole %(linkrole)s missing order number	SBR.NL.2.2.3.06
+2f51e4433b6949ffba425d055a66bc8a	Presentation linkrole %(linkrole)s missing order number relationship set	SBR.NL.2.2.3.06
+a45dc872fc2a45afba0ec2713a8aa9f5	Presentation linkrole order number %(order)s of %(linkrole)s also used in %(otherLinkrole)s	SBR.NL.2.2.3.06
+d581f0baeb4d4aa2abe3ed1195bd4e69	Link RoleType %(roleType)s definition has leading or trailing spaces: ""%(definition)s""	SBR.NL.2.2.3.07
+501fd785d66f4bd19ff75a2bc45896fa	Arcrole type definition is not allowed: %(arcroleURI)s	SBR.NL.2.2.4.01
+9f40e7133664434dbb628335c389b465	ArcroleType is not allowed %(roleURI)s	SBR.NL.2.2.4.01
+63fcf11b8a0d401cb5023c5551729f61	ArcroleType missing nl or en generic label: %(arcrole)s	SBR.NL.2.2.4.02
+3a0075459ad24cc2af78d71fd9cb731a	Link part %(element)s is not authorized	SBR.NL.2.2.5.01
+09c383de7ec444259ed3a5864bc3619e	Link:part concept %(concept)s is not allowed	SBR.NL.2.2.5.01
+0ab0cacc39284aa985c7b7b9597c9075	Link part definition %(concept)s must have a generic label in language 'nl'	SBR.NL.2.2.5.02
+baacd17630f74f0196e8f01052454f15	Type %(typename)s has length restriction facets	SBR.NL.2.2.7.02
+720b09e1f3834837a8c20421e68335b7	Concept %(concept)s has enumeration and is not based on stringItemType	SBR.NL.2.2.7.04
+c63e183a435e492894f0481b428acab9	Typed dimension domain element %(concept)s must have a generic label	SBR.NL.2.2.8.01
+0f9472ff7bfd43b99a941a97fd42f587	Typed dimension domain element %(concept)s has disallowed complex content	SBR.NL.2.2.8.02
+43ea6adc66ae4c2ea9defc4b6fbaf02d	Xlink 1.1 simple type is not allowed (xlink:type is missing)	SBR.NL.2.3.0.01
+d3260aa0480d449d9baec71179e1a7f7	%(docType)s xml version must be ""1.0"" but is ""%(xmlVersion)s""	SBR.NL.2.3.0.02
+bd3f1521026c470fb23a5d67eaeb327a	%(docType)s encoding must be ""utf-8"" but is ""%(xmlEncoding)s""	SBR.NL.2.3.0.03
+c9387255e0ec4f519660d0bcc4b1dd71	%(docType)s must have comment node only on line 2	SBR.NL.2.3.0.04
+c05271474cbb426c91c7a7df3710dbea	%(docType)s must have only one comment node before schema element	SBR.NL.2.3.0.05
+f59a0a6dc7d74ddba9079f16e7bbb2d1	%(fileType)s must have only one comment node before schema element: ""%(value)s""	SBR.NL.2.3.0.05
+33db11d07fbc4debb475c7a4bf7481a7	Linkbase element must not have schemaLocation entry for %(schemaLocation)s	SBR.NL.2.3.0.07
+7f7fedac8f3f4170b51bd0f8b3c1d8fe	%(docType)s namespace declaration ""%(declaration)s"" is not used	SBR.NL.2.3.0.08
+cd834eb5edc546e8bc2846e4c9ef6e68	%(arc)s must not contain use='prohibited'	SBR.NL.2.3.0.10
+2d2641a76ba1484081ba16cfae450857	Arc element %(element)s may not be contained in a linkbase with %(element2)s	SBR.NL.2.3.0.11
+8f1b894538ed439294fc6730cbcd6a48	Loc element %(element)s may not be contained in a linkbase with %(element2)s	SBR.NL.2.3.0.11
+984d3b421382432dbd527a7687545c54	Resource element %(element)s may not be contained in a linkbase with %(element2)s	SBR.NL.2.3.0.11
+9746fa5e2a484d93ad942290fa94a83c	Linkbase has no relationships	SBR.NL.2.3.0.12
+6765ebbbeeda418fa56b627a43e2a650	%(fileType)s element %(element)s must not have xmlns:%(prefix)s	SBR.NL.2.3.1.01
+8d975fa8e203436e8ee54a639d2cafdb	Loc %(xlinkLabel)s has unauthorized role attribute	SBR.NL.2.3.10.08
+a199d368003441c1b46157d0e53a8c0c	RoleType %(roleURI)s missing id attribute	SBR.NL.2.3.10.11
+bc6a5713e88d4367b69916dd702e00cb	Documentation element must not be used: %(value)s	SBR.NL.2.3.10.12
+d16ec72ce03d4675ada45c9c756092cf	Extended link %(element)s must have a standard xlink:role attribute (%(xlinkRole)s)	SBR.NL.2.3.10.13
+bc10848450c94d09bcfeb2327eb0eac0	Extended link %(element)s must have an xlink:role attribute	SBR.NL.2.3.10.13
+c0b3614226cb4db89493bc0cf8c12126	Concept %(specialName)s is appears to be missing a general-special relationship to %(generalNames)s	SBR.NL.2.3.2.01
+dc8ed579ce944da7b72b9758f24b7f3e	The source and target of an arc must be in the DTS from %(elementFrom)s to %(elementTo)s, in linkrole %(linkrole)s, arcrole %(arcrole)s	SBR.NL.2.3.2.07
+5b8ac27fd430444e8f04f8cd53e07a2d	Reference %(xlinkLabel)s has unauthorized part element %(element)s	SBR.NL.2.3.3.01
+e82be62fab8b4b2a903e15d5e627c081	Reference %(xlinkLabel)s is missing an id attribute	SBR.NL.2.3.3.02
+663f9ef0a709419e83a08e96b39ec408	Reference %(xlinkLabel)s has duplicated id %(id)s also in linkbase %(otherLinkbase)s	SBR.NL.2.3.3.03
+2e14f86c80ff4783981f9d476ef4cae1	ReferenceArc from %(xlinkFrom)s to %(xlinkTo)s has an order	SBR.NL.2.3.3.05
+7e710fc3cef542b9af840507f3e4cea9	Tuple %(concept)s has mismatch between content and presentation children: %(missingQname)s.	SBR.NL.2.3.4.01
+d5954c9011ae40c6904e443dcb15d364	Preferred label on presentation relationships not allowed	SBR.NL.2.3.4.03
+387af295f70a44f9983a4fc0db9715d1	Non-distinguished preferredLabel presentation relations from concept %(conceptFrom)s in base set role %(linkrole)s	SBR.NL.2.3.4.06
+b19c6ab61c534cce9b1813725b38808f	Primary items for hypercube %(hypercube)s ELR %(ELR)s, have non-unique (inheritance) member %(concept)s in DRS role %(linkrole)s	SBR.NL.2.3.5.01
+1cf93508e15f450aa17ee4ddb90c3654	Hypercube %(hypercube)s has different dimensions in DRS roles %(linkrole)s and %(linkrole2)s: %(dimensions)s and %(dimensions2)s	SBR.NL.2.3.5.02
+f356be7294484db3931ff86fa24ff1fc	ELR role %(linkrole)s, is not dedicated to %(hypercube)s, but also has %(otherQname)s	SBR.NL.2.3.5.03
+327a0e7bfeae4a4881f29bb93691eaa0	Hypercube %(hypercube)s in DRS role %(linkrole)s, missing targetrole to dimension %(dimension)s consecutive relationship	SBR.NL.2.3.5.04
+fc7bff4d95c44a61922f9911bbc18721	Notall from primary item %(primaryItem)s in ELR role %(linkrole)s to %(hypercube)s	SBR.NL.2.3.5.05
+8b78b9abdfd94703a7bd27c9d79b7703	hypercube %(hypercube)s in segment not allowed, ELR role %(linkrole)s	SBR.NL.2.3.5.06
+7682199616b442f59a155fff2f293e78	Typed dimension %(dimension)s in DRS role %(linkrole)s, has targetrole consecutive relationship	SBR.NL.2.3.5.07
+37e15d569c914f9f84c139a72775d81f	Dimension %(dimension)s domains same in linkroles %(linkroles)s	SBR.NL.2.3.6.02
+eb26cbddafb5487f9b672c0ba40bb189	Dimension %(dimension)s in DRS role %(linkrole)s for hypercube %(hypercube)s, non-unique member %(concept)s	SBR.NL.2.3.6.02
+4459428734c843eca04afcf03440c584	Dimension %(dimension)s in DRS role %(linkrole)s, missing targetrole to consecutive domain relationship	SBR.NL.2.3.6.03
+86cb2ef17c1e4d11b9d0a3639d6a3709	All hypercube %(hypercube)s in DRS role %(linkrole)s, does not have closed='true'	SBR.NL.2.3.6.04
+cfa70ede79344b049d9ae157e09f00be	Dimension-default in from %(conceptFrom)s to %(conceptTo)s in role %(linkrole)s is not allowed	SBR.NL.2.3.6.05
+377e5bbdaed147038871e861a157fc7a	Primary item %(concept)s in DRS role %(linkrole)s for hypercube %(hypercube)s, has parent %(concept2)s which is not a primaryDomainItem	SBR.NL.2.3.7.01
+0aa2585b4dd840929213d62c126029d2	Dimension %(dimension)s in DRS role %(linkrole)s, has nonAbsract domain %(domain)s	SBR.NL.2.3.7.02
+e188bccd08d441a38e4ef4e212f32b81	Domain member %(member)s in DRS role %(linkrole)s, has nested members	SBR.NL.2.3.7.03
+0707c89590e145748d5224816f450963	Linkrole %(linkrole)s, has multiple domains %(domains)s	SBR.NL.2.3.7.04
+8b51ab9369984febb0f19f7eb6250df5	Dimension %(dimension)s in DRS role %(linkrole)s, has usable domain with members %(domain)s	SBR.NL.2.3.7.05
+f707812b10b44046b2b2879072a4e934	Element %(element)s %(xlinkLabel)s has unauthorized xml:lang='%(lang)s'	SBR.NL.2.3.8.01
+87abecdc569a4e9fa9e2c90a08f8f129	Element %(element)s %(xlinkLabel)s has unauthorized xml:lang='%(lang)s'	SBR.NL.2.3.8.02
+f4bb940b7f1c4ea78069fc2c2eb73db4	RoleType %(roleURI)s must have a label in lang ""nl""	SBR.NL.2.3.8.05
+bf756346fb364ca0a6d06a4b5cba73fa	labelArc may not be contain order (%(order)s)	SBR.NL.2.3.8.08
+8c0be7add8d74429b9bf66c9ac0f12b0	Calculation linkbase linkrole %(linkrole)s	SBR.NL.2.3.9.01
+4b5bf17cfaac4a71b24d72283b5f0735	Formula:formula %(xlinkLabel)s is not allowed	SBR.NL.2.3.9.03
+794bf6c8067d42589fc088730a135663	Unit %(unitID)s disallowed on fact %(element)s of type %(typeName)s	utr:invalid
+fdccd1f96ffe4ac180e2f079923b7319	Generated test case %(reportName)s missing expected event %(event)s	warning
+76b323275d4645abba40f112bb291e5a	Href %(elementHref)s file not found	xbrl:hrefFileNotFound
+38e280e32679478986aafdc14a886323	Linkbase extended link %(element)s missing schema definition	xbrl:schemaDefinitionMissing
+3ce0e2050a574a658eb607008f23b596	Instance fact %(element)s missing schema definition 	xbrl:schemaImportMissing
+79ccb3bf8bd347a99ce5c642422b8e95	Element %(element)s missing xlink:type=”simple”	xbrl.3.5.1.1:simpleLinkType
+a08a91248ffc4f1eb682d64e7dbc7cad	Element %(element)s missing or invalid href	xbrl.3.5.1.2:simpleLinkHref
+b658a1879a904ab7821372b6fd188dc6	Simple link role %(xlinkRole)s is empty	xbrl.3.5.1.3:emptySimpleLinkRole
+62e8c1f301374f90ad444b7536311b41	Arcrole on %(element)s is empty	xbrl.3.5.1.4:emptyXlinkArcrole
+78ccf8c2d7e643ceb5965bd26754cdcd	Role %(xlinkRole)s is missing a roleRef	xbrl.3.5.2.4:missingRoleRef
+8192fd3302ad4c068542248ec318c866	Role %(xlinkRole)s is not absolute	xbrl.3.5.2.4:roleNotAbsolute
+7de59a21abe649cf831bd26e75a79770	Arcrole %(arcrole)s is not absolute	xbrl.3.5.2.5:arcroleNotAbsolute
+921b62424daa41f0aa75bbfe8c8bb12b	Arcrole %(arcrole)s is missing an arcroleRef	xbrl.3.5.2.5:missingArcroleRef
+551312e6f2f64d6985bdf8de5dcfd031	Standard extended link role %(xlinkRole)s is empty	xbrl.3.5.3.3:emptyStdExtLinkRole
+d70c7bd71cd4415b8ff7fceb1a6249d3	Element %(element)s missing xlink:type=”locator”	xbrl.3.5.3.7.1:linkLocType
+539034933ba14eb48a838149eb75ca17	Loc's href %(locHref)s does not identify an element in an XBRL document discovered as part of the DTS	xbrl.3.5.3.7.2:instanceLocInDTS
+ef2c35f8e33f4a199a3cc2162c33a883	Element %(element)s appears to be a resource missing xlink:type=”resource”	xbrl.3.5.3.8.1:resourceType
+c2d7d21475644f19a7f7a0a9d6e551a8	Element %(element)s missing xlink:label	xbrl.3.5.3.8.2:resourceLabel
+7c0054bddb4049d9ba4300b215176fe4	Href %(elementHref)s not located	xbrl.3.5.4:hrefIdNotFound
+3f932ee0ee1b4edbbf105150a5af3d89	Href %(elementHref)s unsupported scheme: %(scheme)s	xbrl.3.5.4:hrefScheme
+37e35e0702e84e1593293c30763491c6	Xbrl must be a root element, and may not be nested in %(parent)s	xbrl.4:xbrlRootElement
+e22c27407b144a6d92bf9374870345f9	Instance loc's href %(locHref)s not an element in same instance	xbrl.4.11.1.1:instanceLoc
+0e1f16b9f7964c2d8dca30a225ef50cc	Footnote %(xlinkLabel)s element missing xml:lang attribute	xbrl.4.11.1.2.1:footnoteLang
+e7bdc978376c461fb0462913d8da47a5	Footnote arc in extended link %(linkrole)s from %(xlinkLabelFrom)s to %(xlinkLabelTo)s \from\ is not a loc	xbrl.4.11.1.3.1:factFootnoteArcFrom
+f4cbfb88ffa64aaaaae54bca9ae1613e	Footnote arc in extended link %(linkrole)s from %(xlinkLabelFrom)s to %(xlinkLabelTo)s \to\ is not a footnote resource	xbrl.4.11.1.3.1:factFootnoteArcTo
+b9b34b33518c4470b06c853063f21a06	SchemaRef %(schemaRef)s does not identify an xsd:schema element	xbrl.4.2.2:schemaRefHref
+a890c69dbd6f4efda8199e89398eb2f9	LinkbaseRef %(linkbaseHref)s does not identify an link:linkbase element	xbrl.4.3.2:linkbaseRefHref
+919596a9f21e44d49bcbc7379f584c48	LinkbaseRef missing arcrole	xbrl.4.3.3:linkbaseRefArcrole
+fe77628a843146ad89a9c6ed60aa4f63	LinkbaseRef %(linkbaseHref)s role %(role)s has wrong extended link %(link)s	xbrl.4.3.4:linkbaseRefLinks
+71f31abfa19e4bb5b8cf5150cf2fae02	Fact %(fact)s must be an item or tuple	xbrl.4.6:notItemOrTuple
+021f4f5991d64fc6b771bec4ad3d9065	Item %(fact)s must have a context	xbrl.4.6.1:itemContextRef
+32d89ddbd61948be8db32391d0db4163	Tuple %(fact)s must not have a context	xbrl.4.6.1:tupleContextRef
+9b82e52350da410db846766a3d9ef416	Fact %(fact)s context %(contextID)s is numeric and must have a unit	xbrl.4.6.2:numericUnit
+62c67745d2214255809e0dce0baacc60	Fact %(fact)s context %(contextID)s can not have both precision and decimals	xbrl.4.6.3:bothPrecisionAndDecimals
+69637e4b01244002b9f461e328a578e7	Fact %(fact)s context %(contextID)s is a fraction concept and cannot have either precision or decimals	xbrl.4.6.3:fractionPrecisionDecimals
+7bb18d6779794e0a8cf2d987c08905f4	Fact %(fact)s context %(contextID)s is a numeric concept and must have either precision or decimals	xbrl.4.6.3:missingPrecisionDecimals
+1762a325b74e43a5b15e422cbcabd430	Fact %(fact)s context %(contextID)s can not be nil and have either precision or decimals	xbrl.4.6.3:nilPrecisionDecimals
+78d4ad51ee7942e38e7c38027ef3eefa	Fact %(fact)s is a tuple and cannot have either precision or decimals	xbrl.4.6.3:tuplePrecisionDecimals
+ca8cef4c4eb8439283051077eb92cc82	Fact %(fact)s context %(contextID)s precision %(precision)s is invalid	xbrl.4.6.4:precision
+ca8cef4c4eb8439283051077eb92cc82	Fact %(fact)s context %(contextID)s precision %(precision)s is invalid	xbrl.4.6.4:precision
+557d1ec7b31c4037940177088e24b90b	Fact %(fact)s context %(contextID)s decimals %(decimals)s is invalid	xbrl.4.6.5:decimals
+88323bacfc6e430aabfae0de55d86fa9	Element %(element)s is out of order	xbrl.4.7:instanceElementOrder
+4735c58c19a246fa98c52ccbefa60ae6	Context %(contextID) startDate or endDate: %(error)s	xbrl.4.7.2:contextDateError
+bef1bd7070804ef2a7e4ebd4683d3d96	Context %(contextID)s instant date: %(error)s	xbrl.4.7.2:contextDateError
+7eee24bae2d4405c8b182f71e449a30a	Fact %(fact)s context %(contextID)s has period type %(periodType)s conflict with context	xbrl.4.7.2:contextPeriodType
+4fd5801ab4df41108b838ca9bac761d1	Context %(contextID)s must have startDate less than endDate	xbrl.4.7.2:periodStartBeforeEnd
+e263dd1d83074a58b3a010cb6bb88636	Unit %(unitID)s illegal measure: %(measure)s	xbrl.4.8.2:measureElement
+347d0a8c7f5341aeb4113dff0ddc01cb	Fact %(fact)s context %(contextID)s must have a monetary unit %(unitID)s	xbrl.4.8.2:monetaryFactUnit
+3d22804a534641e28db39f6838dd7b31	Fact %(fact)s context %(contextID)s must have a xbrli:shares unit %(unitID)s	xbrl.4.8.2:sharesFactUnit
+8c0c6b89e0554573b7d204210a482bc1	Unit %(unitID)s numerator measure: %(measure)s also appears as denominator measure	xbrl.4.8.4:measureBothNumDenom
+c7b4129370f84a379d304525e282ab21	Fact %(fact)s is a tuple and must not have attribute in this namespace %(attribute)s	xbrl.4.9:tupleAttribute
+8f88a06efc3d414fb4ffe9ecdea87e32	Tuple %(concept)s must not have attribute in this namespace %(attribute)s	xbrl.4.9:tupleAttribute
+751c51ae278d42ed98e1ff133efc0c7a	Tuple %(concept)s must not have balance	xbrl.4.9:tupleBalance
+540841271c24495f911cda49b88e801f	Tuple %(concept)s must not have element %(tupleElement)s not an item or tuple	xbrl.4.9:tupleElementItemOrTuple
+ce60741649a04b19a5d1f7c658cee012	Tuple %(concept)s element %(tupleElement)s not defined	xbrl.4.9:tupleElementUndefined
+f20b36b592b34945a8ba1470a376ea30	Tuple %(concept)s must be declared globally	xbrl.4.9:tupleGloballyDeclared
+59f895f4a2e94aa18031c62a9efdd8dd	Tuple %(concept)s must not have mixed content	xbrl.4.9:tupleMixedContent
+e847e212880e4ccfb52dc4233ae5c5c8	Tuple %(concept)s must not have periodType	xbrl.4.9:tuplePeriodType
+670257e4a7374232a6443487dd3b77f2	Tuple %(concept)s must not have simple content	xbrl.4.9:tupleSimpleContent
+8862e2440a0a4cb38f2697ece64b227a	Schema element has an empty targetNamespace	xbrl.5.1:emptyTargetNamespace
+d20351a8b8c64896a3fb27c24f5d016c	Schema must be a root element, and may not be nested in %(parent)s	xbrl.5.1:schemaRootElement
+51ca8038f2fb4202afe68cecc468d28c	Fact %(fact)s context %(contextID)s is a fraction with invalid denominator %(denominator)	xbrl.5.1.1:fractionPrecisionDecimals
+24d47c6c33a443ddb10e831197ccd08f	Fact %(fact)s context %(contextID)s is a fraction with invalid numerator %(numerator)s	xbrl.5.1.1:fractionPrecisionDecimals
+88eadbca7529464eadb47dd5941dd1f0	Fact %(fact)s context %(contextID)s may not have child elements %(childElementName)s	xbrl.5.1.1:itemMixedContent
+d78669307dc84b6c86c47c6929acb394	Item %(concept)s must have a valid periodType	xbrl.5.1.1.1:itemPeriodType
+749f7375a53e4d48bd0822a04d53822e	Calculation relationship has illegal weight %(weight)s from %(source)s, %(sourceBalance)s, to %(target)s, %(targetBalance)s, in link role %(linkrole)s (per 5.1.1.2 Table 6)	xbrl.5.1.1.2:balanceCalcWeight
+a37e4eae4f0f4a4fa9d742f046b4c003	Item %(concept)s may not have a balance	xbrl.5.1.1.2:itemBalance
+ea5f7973010a4104a6d1e5f2d8c42fb5	Item %(concept)s must have a valid balance %(balance)s	xbrl.5.1.1.2:itemBalance
+c60c970bb20244969794287173b81622	Item %(concept)s type %(itemType)s invalid	xbrl.5.1.1.3:itemType
+0e60185137d0490ca29fc827a67b9563	Role %(xlinkRole)s missing usedOn for %(element)s	xbrl.5.1.3.4:custRoleUsedOn
+57de3ac55b56426888114eb6b6ce0fc9	Arcrole %(arcrole)s missing usedOn for %(element)s	xbrl.5.1.4.5:custArcroleUsedOn
+f2dedbbafbbd490da82956599a100d44	XBRL file {0} standard arcrole %(arcrole)s used on wrong arc %(element)s	xbrl.5.1.4.5:custArcroleUsedOn
+d77dbedf68da4911b0aa580f1db6675c	Linkbase must be a root element or child of appinfo, and may not be nested in %(parent)s	xbrl.5.2:linkbaseRootElement
+fb34a9dff6b2416ea8abfaea0a675d06	Label %(xlinkLabel)s element missing xml:lang attribute	xbrl.5.2.2.2.1:labelLang
+f6ed821340a647bea797cbf999fb3409	Unprohibited labelArc in extended link %(linkrole)s has illegal remote resource loc labeled %(xlinkLabel)s href %(xlinkHref)s	xbrl.5.2.2.3:labelArcRemoteResource
+424b12e125df4c27961430ce793d8f5b	Presentation relationship from %(source)s to %(target)s in link role %(linkrole)s missing preferredLabel %(preferredLabel)s	xbrl.5.2.4.2.1:preferredLabelMissing
+438b1d3ae5774d50ba9a50e4f1eb6823	Calculation inconsistent from %(concept)s in link role %(linkrole)s reported sum %(reportedSum)s computed sum %(computedSum)s context %(contextID)s unit %(unitID)s	xbrl.5.2.5.2:calcInconsistency
+c422b796b2e44a83be3bbaca001e50c0	Calculation relationship has illegal concept from %(source)s%(sourceNumericDecorator)s to %(target)s%(targetNumericDecorator)s in link role %(linkrole)s	xbrl.5.2.5.2:nonNumericCalc
+77f7011c9d994e9b8f8d5736084ccb11	Calculation relationship has zero weight from %(source)s to %(target)s in link role %(linkrole)s	xbrl.5.2.5.2.1:zeroWeight
+52f10575987f4dcc959916311772ea17	Essence-alias relationship from %(source)s to %(target)s in link role %(linkrole)s has different balances	xbrl.5.2.6.2.2:essenceAliasBalance
+4616cfbd653045ee990ba03e70c67016	Essence-alias relationship from %(source)s to %(target)s in link role %(linkrole)s has different types or periodTypes	xbrl.5.2.6.2.2:essenceAliasTypes
+162cd9a518f845039f6b4abbbb2fc266	Essence-Alias inconsistent units from %(essenceConcept)s to %(aliasConcept)s in link role %(linkrole)s context %(contextID)s	xbrl.5.2.6.2.2:essenceAliasUnitsInconsistency
+fc26f0d9c5fc4f2e92895dd272f54eaa	Essence-Alias inconsistent value from %(essenceConcept)s to %(aliasConcept)s in link role %(linkrole)s context %(contextID)s	xbrl.5.2.6.2.2:essenceAliasUnitsInconsistency
+356f059ab0184802a249dbc7158dfaf6	Requires-Element %(requiringConcept)s missing required fact for %(requiredConcept)s in link role %(linkrole)s	xbrl.5.2.6.2.4:requiresElementInconsistency
+219daef43ae64443aba8a74ecb6f497e	Redefine is not allowed	xbrl.5.6.1:Redefine
+c550ec846a81454fa6b1ec9d3bd41a17	Variable set %(xlinkLabel)s, aspect cover filter %(filterLabel)s, aspect %(aspect)s, conflicts with %(filterLabel2)s with inconsistent cover attribute	xbrlacfe:inconsistentAspectCoverFilters
+07190b2392354186bcba095db2b74fda	Consistency assertion %(xlinkLabel)s has both absolute and proportional acceptance radii	xbrlcae:acceptanceRadiusConflict
+c06c435715c949f0a24c766ecccc709d	Consistency assertion %(xlinkLabel)s has relationship to a %(elementTo)s %(xlinkLabelTo)s	xbrlcae:variablesNotAllowed
+1c25607ba1484d1ab3ce1348bed4673a	Custom function %(name)s signature has %(parameterCountSignature)s parameters but implementation has %(parameterCountImplementation)s, must be matching	xbrlcfie:inputMismatch
+04fe2aed015b4e73a03b90b754602f44	Custom function implementation %(xlinkLabel)s has no relationship from any custom function signature	xbrlcfie:missingCFIRelationship
+4595e809bc57461bb545314aa3580263	Function implementation %(xlinkLabel)s must be the target of only one function-implementation relationship	xbrlcfie:tooManyCFIRelationships
+807c98f0916d4382985cade105e61224	Function-implementation relationship from signature %(name)s has more than one implementation target	xbrlcfie:tooManyCFIRelationships
+2e33405adc6a44c9ade30034878e0f71	Context %(contextID)s explicit dimension %(dimension)s member {2} is a default member item	xbrldie:DefaultValueUsedInInstanceError
+b025b75e23104a54ab453f84f0f3bb0a	Context %(contextID)s %(dimension)s %(value)s is not an appropriate dimension item	xbrldie:ExplicitMemberNotExplicitDimensionError
+169e4f3b1c834a03b2a88265cc14c919	Context %(contextID)s explicit dimension %(dimension)s member %(value)s is not a global member item	xbrldie:ExplicitMemberUndefinedQNameError
+3ba9b9bc3406497486ba1a67506b0ac8	Context %(contextID)s typed dimension %(dimension)s has %(error)s	xbrldie:IllegalTypedDimensionContentError
+d16726e0c6824de6abbf996346afd566	Fact %(fact)s context %(contextID)s dimensionally not valid	xbrldie:PrimaryItemDimensionallyInvalidError
+4010c7c5c36f4781bdcb6f0e1ac93d00	Context %(contextID)s dimension %(dimension)s is a repeated dimension value	xbrldie:RepeatedDimensionInInstanceError
+ba6773a1384e462990260a0aaf6a4810	Context %(contextID)s %(dimension)s %(value)s is not an appropriate dimension item	xbrldie:TypedMemberNotTypedDimensionError
+0fbf00730eba49768f2f2fb89af228c1	Dimension-default relationship from %(source)s to %(target)s in link role %(linkrole)s has a typed dimension source	xbrldte:DimensionDefaultSourceError
+efe630372dab4f42b76eb8558fcc1a96	Dimension-default relationship from %(source)s to %(target)s in link role %(linkrole)s must have a dimension declaration source	xbrldte:DimensionDefaultSourceError
+94fd677d637148a89146f4575c7a616a	Dimension-default relationship from %(source)s to %(target)s in link role %(linkrole)s must have a domain member target	xbrldte:DimensionDefaultTargetError
+adf46df8101048d885f9781d2cb0f95c	Dimension-domain relationship from %(source)s to %(target)s in link role %(linkrole)s has a typed dimension source	xbrldte:DimensionDomainSourceError
+b566cbcd27234b8d9ea0b584d41dbe15	Dimension-domain relationship from %(source)s to %(target)s in link role %(linkrole)s must have a dimension declaration source	xbrldte:DimensionDomainSourceError
+e3e385e059394081b47923a31fea4659	Dimension-domain relationship from %(source)s to %(target)s in link role %(linkrole)s must have a domain member target	xbrldte:DimensionDomainTargetError
+a49b1a3209484fccac5122e7db48b07f	Dimension item %(concept)s must be abstract	xbrldte:DimensionElementIsNotAbstractError
+03d3b50e85454a75843a62ac5bc0e329	Domain-Member relationship from %(source)s to %(target)s in link role %(linkrole)s must have a domain primary item or domain member source	xbrldte:DomainMemberSourceError
+a577dae36ab2421287f7c8f010dfcc09	Domain-Member relationship from %(source)s to %(target)s in link role %(linkrole)s must have a domain primary item or domain member target	xbrldte:DomainMemberTargetError
+3c7ad3a77cb04347807c31657037d19e	Dimension relationships have a directed cycle in DRS role %(linkrole)s \nstarting from hypercube %(hypercube)s, \ndimension %(dimension)s, \npath %(path)s	xbrldte:DRSDirectedCycleError
+653a6b1291bd440eb0066eedf5c8b269	HasHypercube %(arcroleType)s relationship from %(source)s to %(target)s in link role %(linkrole)s must have a context element	xbrldte:HasHypercubeMissingContextElementAttributeError
+8b6cc069bbd04219ae4be357d1134ea5	HasHypercube %(arcroleType)s relationship from %(source)s to %(target)s in link role %(linkrole)s must have a primary item source	xbrldte:HasHypercubeSourceError
+3cdd916e7e7841eea76d52f3a6e6f196	HasHypercube %(arcroleType)s relationship from %(source)s to %(target)s in link role %(linkrole)s must have a hypercube declaration target	xbrldte:HasHypercubeTargetError
+b7c7abab9f8c49eeb1590bc8a5cac09e	Hypercube-dimension relationship from %(source)s to %(target)s in link role %(linkrole)s must have a hypercube declaration source	xbrldte:HypercubeDimensionSourceError
+2f4381bb37ab4b8dbd3a1a8eddeec658	Hypercube-dimension relationship from %(source)s to %(target)s in link role %(linkrole)s must have a dimension declaration target	xbrldte:HypercubeDimensionTargetError
+bfdabf7d5dbd48a484de796831d081bc	Hypercube item %(concept)s must be abstract	xbrldte:HypercubeElementIsNotAbstractError
+406fe632e60d442c9fc8915354b79b94	Concept %(concept)s typedDomainRef is not resolved	xbrldte:OutOfDTSSchemaError
+0c53093bbe6d4f58b4ed8a44cf05e2f2	Dimension relationships have a polymorphism cycle in DRS role %(linkrole)s \nstarting from hypercube %(hypercube)s, \ndimension %(dimension)s, \npath %(path)s	xbrldte:PrimaryItemPolymorphismError
+6858185ae366424dac7f3bd7d62d3038	TargetRole %(targetRole)s is missing a roleRef	xbrldte:TargetRoleNotResolvedError
+9cc31e36973b40b9a412742aa0c710e0	Dimension %(source)s has multiple defaults %(target)s and %(target2)s	xbrldte:TooManyDefaultMembersError
+ae6d430da76d41c3855c3594a4787f7e	Concept %(concept)s typedDomainRef must identify a non-abstract element	xbrldte:TypedDimensionError
+386556f8a2f94426848059cfc27856e8	Concept %(concept)s typedDomainRef has no fragment identifier	xbrldte:TypedDimensionURIError
+be1eb6f6e8ae44438db39571bc4c75b0	Concept %(concept)s is not a dimension item but has a typedDomainRef	xbrldte:TypedDomainRefError
+3dbe49792061490ea97a1a7a06248f51	Existence Assertion %(xlinkLabel)s, cannot refer to variable %(name)s	xbrleae:variableReferenceNotAllowed
+4efd975f53424722ac0cac609008bffe	Formula %(xlinkLabel)s: source %(name)s is a fact variable that has a fallback value	xbrlfe:bindEmptySourceVariable
+503699c0f1944192bd2f9d948502687d	Formula %(xlinkLabel)s has a rule for the %(aspectPeriodType)s period aspect of a %(conceptPeriodType)s concept %(concept)s	xbrlfe:conflictingAspectRules
+f1556f588cf14c7db37c3e170ee3f03f	Formula %(xlinkLabel)s has a rule for the unit aspect of a non-numeric concept %(concept)s	xbrlfe:conflictingAspectRules
+995e3f8fd0b0470bbc70e71f2aad9136	Formula %(xlinkLabel)s: formula source %(name)s is a fact variable that binds as a sequence	xbrlfe:defaultAspectValueConflicts
+30a9f143c3824ef69e6ac2b998bf13aa	Formula %(xlinkLabel)s, not implicit filtering element has formulaUncovered source: %(name)s	xbrlfe:illegalUseOfUncoveredQName
+fb060c3155ea4a03a6f7ccd5bfd3e9cc	Formula %(xlinkLabel)s concept rule does not have a nearest source and does not have a child element	xbrlfe:incompleteConceptRule
+0b473dbc42fd48b5b79fa16df16c92df	Formula %(xlinkLabel)s entity identifier rule does not have a nearest source and does not have either a @scheme or a @value attribute	xbrlfe:incompleteEntityIdentifierRule
+7133b9aeaa454515bda80b0e6daa0a9d	Formula %(xlinkLabel)s period rule does not have a nearest source and does not have a child element	xbrlfe:incompletePeriodRule
+c0ccf6c392004507af214283bbb53041	Formula %(xlinkLabel)s concept %(concept)s is not a %(element)s	xbrlfe:missingConceptRule
+8cbc17c65c28482d9aa843aff84351c0	Formula %(xlinkLabel)s omits a rule for the concept aspect	xbrlfe:missingConceptRule
+a0683918f6e5451b8531d7766ab8c067	Formula %(xlinkLabel)s omits a rule for the entity identifier aspect	xbrlfe:missingEntityIdentifierRule
+5ee63ee7786a4da8a4757d8405ced4d2	Formula %(xlinkLabel)s omits a rule for the period aspect	xbrlfe:missingPeriodRule
+038f819691474c13b3a9df0887aa4431	Formula %(xlinkLabel)s unit rule does not have a source and does not have a child element	xbrlfe:missingSAVForUnitRule
+33b64f2630ec4694aa715dabdec14ab7	Formula %(xlinkLabel)s omits a rule for the unit aspect	xbrlfe:missingUnitRule
+18ec638893fa45fa8c5f84b5a54c77bd	Variable set %(xlinkLabel)s, source %(name)s is not in the variable set	xbrlfe:nonexistentSourceVariable
+fc83540263304df0a4353b2374061cb9	Variable set %(xlinkLabel)s, source %(name)s not a factVariable but is a %(element)s	xbrlfe:nonexistentSourceVariable
+f856467cb1a644a881ddeee2893777d0	Formula %(xlinkLabel)s value is a sequence of length %(valueSequenceLength)s	xbrlfe:nonSingletonOutputValue
+dc637b17b86f422682f388a7a0b9ab05	Formula %(xlinkLabel)s aspect model, %(aspectModel)s, includes an rule for aspect not defined in this aspect model: %(undefinedAspects)s	xbrlfe:unrecognisedAspectRule
+96f5504922564fa3bea8259bb987f765	Generic arc arcrole %(arcrole)s missing usedOn for %(element)s	xbrlgene:missingArcRoleUsedOnValue
+91c6a1031ec845498f69db0706e10f82	Generic link role %(xlinkRole)s missing usedOn for {2}	xbrlgene:missingLinkRoleUsedOnValue
+a063247e11aa4f1c96499857a6618310	Generic resource role %(xlinkRole)s missing usedOn for %(element)s	xbrlgene:missingResourceRoleUsedOnValue
+f3ec328d483e4997ac4edad220c70e3d	Generic arc arcrole %(arcrole)s is missing an arcroleRef	xbrlgene:missingRoleRefForArcRole
+beaf4e4847044b8b94710b3181d2f13d	Generic link role %(xlinkRole)s is missing a roleRef	xbrlgene:missingRoleRefForLinkRole
+5bd78117a74e44f8a6084e51b25ff0a1	Generic resource role %(xlinkRole)s is missing a roleRef	xbrlgene:missingRoleRefForResourceRole
+1f7f5af249d54c569c2dc450cdb808b6	Generic arc arcrole %(arcrole)s is not absolute	xbrlgene:nonAbsoluteArcRoleURI
+f1579aaa71b246aab8549970ec1c9f1b	Generic link role %(xlinkRole)s is not absolute	xbrlgene:nonAbsoluteLinkRoleURI
+771bdf7f54934fa299169f72bce4cbb4	Generic resource role %(xlinkRole)s is not absolute	xbrlgene:nonAbsoluteResourceRoleURI
+85fcb48dec75412abc1b6a2f5552bd3b	Generic label arc in extended link %(linkrole)s to %(xlinkLabel)s must target a generic label	xbrlle.2.1.1:genericLabelTarget
+6d0d7613c74a43718129f64bc28c4869	Message %(xlinkLabel)s: unbalanced %(character)s character(s) in: %(text)s	xbrlmsge:missingLeftCurlyBracketInMessage
+b280adf9b6104bf7b1160650a5edbba5	Message %(xlinkLabel)s: unbalanced %(character)s character(s) in: %(text)s	xbrlmsge:missingRightCurlyBracketInMessage
+cb4d8c3b914f4ecd9e182e7758e6e0be	Generic reference arc in extended link %(linkrole)s to %(xlinkLabel)s must target a generic reference	xbrlre.2.1.1:genericReferenceTarget
+ea6d76f4558e415fb460f022573f43dd	Cyclic dependencies of instance %(name)s produced by a formula, with variables consuming instances %(dependencies)s	xbrlvarinste:instanceVariableRecursionCycle
+a258ebf7e78c4374a9832fb046f57138	Unresolved dependencies of an assertion's variables on instances %(dependencies)s	xbrlvarinste:instanceVariableRecursionCycle
+81ccdcf325f44d59b4d9c4caa5a47180	Variable set %(xlinkLabel1)s aspectModel (%(aspectModel1)s) differs from varaible set %(xlinkLabel2)s aspectModel (%(aspectModel2)s)	xbrlvarscopee:conflictingAspectModels
+d8b160feb3f449669fbae00a0a1c2cc4	Variable set %(xlinkLabel1)s in instance %(instance1)s has variables scope relationship to varaible set %(xlinkLabel2)s in instance %(instance2)s	xbrlvarscopee:differentInstances
+29fba64a4fb94a25a0e5bba16534fe0a	Cyclic dependencies in variable set %(xlinkLabel)s, from variable %(nameFrom)s to %(nameTo)s	xbrlve:cyclicDependencies
+7ab3105609ce459585f232b8d70e4be3	Multiple variables named %(xlinkLabel)s in variable set %(name)s	xbrlve:duplicateVariableNames
+b8cf19645d224a18b67ac05e2ef74016	Variable set %(xlinkLabel)s, filter %(filterLabel)s, cannot refer to variable %(name)s	xbrlve:factVariableReferenceNotAllowed
+06d2580ac4f349b9b4086ea4ba52c768	Variable set %(xlinkLabel)s fallbackValue '%(fallbackValue)s' cannot refer to variable %(dependency)s	xbrlve:fallbackValueVariableReferenceNotAllowed
+6fcf47730be94afba2bcaa74cbbeebc4	Variable set %(xlinkLabel)s, aspect model %(aspectModel)s filter %(filterName)s %(filterLabel)s can cover aspect not in aspect model	xbrlve:filterAspectModelMismatch
+0c2b0744caff4692ac6fe59b744494d9	Multiple typed domain definitions from %(typedDomain)s to %(equalityDefinition1)s and %(equalityDefinition2)s	xbrlve:multipleTypedDimensionEqualityDefinitions
+b56cef66890d48c1ac92de80ea945f71	No custom function signature for %(custFunction)s in %(resource)s	xbrlve:noCustomFunctionSignature
+edf7bb3336504dd2a76ea4da99514fe1	Custom function %(name)s has namespace reserved for functions in the function registry %(namespace)s	xbrlve:noProhibitedNamespaceForCustomFunction
+235ac51c05744261bbb5a6db2185b59f	Cyclic dependencies in parameter %(name)s, to names %(dependencies)s	xbrlve:parameterCyclicDependencies
+609581a4b1184ccd9d7a5cf76d90164e	Parameter name used on multiple parameters %(name)s	xbrlve:parameterNameClash
+e8918cb18b88493cb3d7523d0baf669f	Parameter \n%(name)s \nException: \n%(error)s	xbrlve:parameterTypeMismatch
+762bdf464fa74b418f839fb96ac38d22	Variable set %(xlinkLabel)s, aspect model %(aspectModel)s not recognized	xbrlve:unknownAspectModel
+05ba9483354d4ce29a7f993b3be25872	Undefined dependencies in parameter %(name)s, to names %(dependencies)s	xbrlve:unresolvedDependency
+23d69ebe08ef47729d9c37da52d78a3f	Undefined variable dependencies in variable set %(xlinkLabel)s, from variable %(nameFrom)s to %(nameTo)s	xbrlve:unresolvedDependency
+f867a5d438e546cfaa9633039f9a8ef1	Undefined variable dependency in variable set %(xlinkLabel)s, %(name)s	xbrlve:unresolvedDependency
+f2e320e094be4952960814c073c1a33e	Variables name %(name)s cannot be determined on arc from %(xlinkLabel)s	xbrlve:variableNameResolutionFailure
+aafc153d5d354de7b32971945edb208a	Function %(name)s cannot be used on an XPath expression associated with a %(name2)s	xffe:invalidFunctionUse
+102b8dccce9049928f0b41fc0be15d10	%(dimension)s is not an explicit dimension concept QName.	xfie:invalidExplicitDimensionQName
+ae423c025a8a41649912331c0a6dc472	Actuate %(xlinkActuate)s invalid in extended link %(linkrole)s	xlink:actuate
+ef112b45410e47df99f0b2e9bb21ab85	Duplicate xlink arcs  in extended link %(linkrole)s from %(xlinkLabelFrom)s to %(xlinkLabelTo)s	xlink:dupArcs
+08ac6fbeba7f4799938acacd8aaa4de8	Xlink locator %(xlinkLabel)s missing href in extended link %(linkrole)s	xlink:locatorHref
+e3ba9cc9eed54e29ae5ff17b2425b33b	Show %(xlinkShow)s invalid in extended link %(linkrole)s	xlink:show
+aff57ed36e624bed8b40f94bd70e4ed1	Xlink type %(xlinkType)s invalid in extended link %(linkrole)s	xlink:type
+a842b5445d384fb88d672c4b7bfa0240	Element %(element)s type %(typeName)s missing required attributes: %(attributes)s	xmlSchema:attributesRequired
+480d522e8aa24e2bac7633ee32fae77d	%(element)s ref %(ref)s not found	xmlschema:refNotFound
+8814cc2cea094a5dbab4a5b2b8d41c12	Linkbase reference for %(linkbaseRefElement)s href attribute missing or malformed	xmlSchema:requiredAttribute
+0dfd7b0d4e74418d896b60f00419088b	Locator href attribute missing or malformed in standard extended link	xmlSchema:requiredAttribute
+46e5ab5610ab4db5858c7edc77efa9a4	%(error)s, %(fileName)s, %(sourceAction)s source element	xmlSchema:syntax
+33af807501b041dda25af2bad7ab9c09	Element %(element)s attribute %(attribute)s type %(typeName)s value error: %(value)s, %(error)s	xmlSchema:valueError
+edb4be7c9a1f4559a9f9776dd3d9f48d	Element %(element)s type %(typeName)s value error: %(value)s	xmlSchema:valueError
+cf493fb4f68d4a9aaefcc0f2869b4ed5	Element %(element)s is mis-located in schema file	xmlschema.3.4.2:contentModel
+45fd39e11600485c93b123cb415266e4	Discovery of %(fileName)s expected namespace %(namespace)s found targetNamespace %(targetNamespace)s	xmlSchema1.4.2.3:refSchemaNamespace
+92d865ee5b8f4318ae56414d7acc05e2	Element %(element)s id %(value)s is duplicated	xmlschema2.3.2.10:idDuplicated

@@ -52,8 +52,7 @@ class Validate:
             try:
                 self.validateTestcase(self.modelXbrl.modelDocument)
             except Exception as err:
-                self.modelXbrl.error("exception",
-                    _("Testcase validation exception: %(error)s, testcase: %(testcase)s"),
+                self.modelXbrl.uuidError("130f1206e24749aa853200d9ff26b667",
                     modelXbrl=self.modelXbrl,
                     testcase=self.modelXbrl.modelDocument.basename, error=err,
                     #traceback=traceback.format_tb(sys.exc_info()[2]),
@@ -62,8 +61,7 @@ class Validate:
             try:
                 ValidateVersReport.ValidateVersReport(self.modelXbrl).validate(self.modelXbrl)
             except Exception as err:
-                self.modelXbrl.error("exception",
-                    _("Versioning report exception: %(error)s, testcase: %(reportFile)s"),
+                self.modelXbrl.uuidError("c3a145ac034041978b3d5c65380a3bd3",
                     modelXbrl=self.modelXbrl,
                     reportFile=self.modelXbrl.modelDocument.basename, error=err,
                     #traceback=traceback.format_tb(sys.exc_info()[2]),
@@ -73,8 +71,7 @@ class Validate:
                 self.instValidator.validate(self.modelXbrl)
                 self.instValidator.close()
             except Exception as err:
-                self.modelXbrl.error("exception",
-                    _("Instance validation exception: %(error)s, instance: %(instance)s"),
+                self.modelXbrl.uuidError("739a0199a7c54f81bcd9e5fbfee38d6b",
                     modelXbrl=self.modelXbrl,
                     instance=self.modelXbrl.modelDocument.basename, error=err,
                     # traceback=traceback.format_tb(sys.exc_info()[2]),
@@ -127,8 +124,7 @@ class Validate:
                                                    base=baseForElement,
                                                    useFileSource=self.useFileSource)
                     if modelXbrl.modelDocument is None:
-                        self.modelXbrl.error("arelle:notLoaded",
-                             _("Testcase %(id)s %(name)s document not loaded: %(file)s"),
+                        self.modelXbrl.uuidError("9e64e9bb4ce3459f932277cc8b2575ed",
                              modelXbrl=testcase, id=modelTestcaseVariation.id, name=modelTestcaseVariation.name, file=os.path.basename(readMeFirstUri))
                         modelXbrl.close()
                         self.determineNotLoadedTestStatus(modelTestcaseVariation)
@@ -161,8 +157,7 @@ class Validate:
                               versReportFile, inputDTSes["from"], inputDTSes["to"])
                         modelTestcaseVariation.status = "generated"
                     else:
-                        self.modelXbrl.error("arelle:notLoaded",
-                             _("Testcase %(id)s %(name)s DTSes not loaded, unable to generate versioning report: %(file)s"),
+                        self.modelXbrl.uuidError("db1e1f971d3d4b93a2f5d930b925de71",
                              modelXbrl=testcase, id=modelTestcaseVariation.id, name=modelTestcaseVariation.name, file=os.path.basename(readMeFirstUri))
                         modelTestcaseVariation.status = "failed"
                     for inputDTS in inputDTSes.values():
@@ -196,8 +191,7 @@ class Validate:
                                                    _("loading expected result XBRL instance"), 
                                                    base=baseForElement)
                         if expectedInstance.modelDocument is None:
-                            self.modelXbrl.error("arelle:notLoaded",
-                                _("Testcase %(id)s %(name)s expected result instance not loaded: %(file)s"),
+                            self.modelXbrl.uuidError("421b536bc75e449dbbfd2dcef07f9abc",
                                 modelXbrl=testcase, id=modelTestcaseVariation.id, name=modelTestcaseVariation.name, 
                                 file=os.path.basename(modelTestcaseVariation.resultXbrlInstance))
                             modelTestcaseVariation.status = "result not loadable"

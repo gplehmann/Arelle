@@ -111,8 +111,7 @@ class WatchRss:
                         
                         emailAlert = False
                         if modelXbrl.modelDocument is None:
-                            modelXbrl.error("arelle.rssWatch",
-                                            _("RSS item %(company)s %(form)s document not loaded: %(date)s"),
+                            modelXbrl.uuidError("fdc53ef637304041b12fe52b66b78e6a",
                                             modelXbrl=modelXbrl, company=rssItem.companyName, 
                                             form=rssItem.formType, date=rssItem.filingDate)
                             rssItem.status = "not loadable"
@@ -186,8 +185,7 @@ class WatchRss:
                         self.rssModelXbrl.modelManager.showStatus(_("RSS item {0}, {1} completed, status {2}").format(rssItem.companyName, rssItem.formType, rssItem.status), 3500)
                         self.rssModelXbrl.modelManager.cntlr.rssWatchUpdateOption(rssItem.pubDate)
                     except Exception as err:
-                        self.rssModelXbrl.error("arelle.rssError",
-                                                _("RSS item %(company)s, %(form)s, %(date)s, exception: %(error)s"),
+                        self.rssModelXbrl.uuidError("32152cb073de45d190605eb6c6af2742",
                                                 modelXbrl=self.rssModelXbrl, company=rssItem.companyName, 
                                                 form=rssItem.formType, date=rssItem.filingDate, error=err,
                                                 exc_info=True)

@@ -44,14 +44,12 @@ def callCfi(xc, p, qname, cfSig, contextItem, args):
         stepQname, stepExpression = step
         stepProg = cfi.stepProgs[i]
         if traceSource:
-            xc.modelXbrl.info("formula:trace",
-                                _("%(cfi)s step %(step)s \nExpression: \n%(expression)s"),
+            xc.modelXbrl.uuidInfo("cf997bf9e87d42bb8217b376894179bb",
                                 modelObject=cfi,
                                 cfi=qname, step=stepQname, expression=stepExpression)
         result = xc.evaluate(stepProg)
         if traceEvaluation:
-            xc.modelXbrl.info("formula:trace",
-                                _("%(cfi)s step %(step)s \nResult: \n%(expression)s"),
+            xc.modelXbrl.uuidInfo("2feeba1cab3a4683a3cfd8821b61fa1f",
                                 modelObject=cfi,
                                 cfi=qname, step=stepQname, expression=result)
         if stepQname in xc.inScopeVars:
@@ -59,14 +57,12 @@ def callCfi(xc, p, qname, cfSig, contextItem, args):
         xc.inScopeVars[stepQname] = result
 
     if traceSource:
-        xc.modelXbrl.info("formula:trace",
-                            _("%(cfi)s output \nExpression: \n%(expression)s"),
+        xc.modelXbrl.uuidInfo("6ccfe16abbbe4232a2f6b87ed5ec13ae",
                             modelObject=cfi,
                             cfi=qname, expression=cfi.outputExpression)
     result = xc.evaluateAtomicValue(cfi.outputProg, cfSig.outputType)
     if traceEvaluation:
-        xc.modelXbrl.info("formula:trace",
-                            _("%(cfi)s output \nResult: \n%(expression)s"),
+        xc.modelXbrl.uuidInfo("e48775236edd4c709002bc26a9640da1",
                             modelObject=cfi,
                             cfi=qname, expression=result)
 

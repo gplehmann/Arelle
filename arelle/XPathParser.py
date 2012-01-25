@@ -79,15 +79,13 @@ def pushQName( sourceStr, loc, toks ):
     if xmlElement is not None:
         nsLocalname = XmlUtil.prefixedNameToNamespaceLocalname(xmlElement, qname, defaultNsmap=defaultNsmap)
         if nsLocalname is None:
-            modelXbrl.error("err:XPST0081",
-                _("QName prefix not defined for %(name)s"),
+            modelXbrl.uuidError("15502442b5aa40af844e154448127837",
                 modelObject=xmlElement,
                 name=qname)
             return
         if (nsLocalname == (XbrlConst.xff,"uncovered-aspect") and
             xmlElement.localName not in ("formula", "consistencyAssertion", "valueAssertion")):
-                modelXbrl.error("xffe:invalidFunctionUse",
-                    _("Function %(name)s cannot be used on an XPath expression associated with a %(name2)s"),
+                modelXbrl.uuidError("aafc153d5d354de7b32971945edb208a",
                     modelObject=xmlElement,
                     name=qname, name2=xmlElement.localName)
     else:
@@ -146,8 +144,7 @@ class OperationDef:
                     prefix = toks1[:-2]
                     ns = XmlUtil.xmlns(xmlElement, prefix)
                     if ns is None:
-                        modelXbrl.error("err:XPST0081",
-                            _("wildcard prefix not defined for %(token)s"),
+                        modelXbrl.uuidError("884ca48e14cc4611b07adc841a2ea748",
                             modelObject=xmlElement,
                             token=toks1)
                     toks1 = QNameDef(loc,prefix,ns,'*')
@@ -205,8 +202,7 @@ def pushFunction( sourceStr, loc, toks ):
             ns not in {XbrlConst.fn, XbrlConst.xfi, XbrlConst.xff, XbrlConst.xsd} and
             not ns.startswith("http://www.xbrl.org/inlineXBRL/transformation")):
             if name not in modelXbrl.modelCustomFunctionSignatures:
-                modelXbrl.error("xbrlve:noCustomFunctionSignature",
-                    _("No custom function signature for %(custFunction)s in %(resource)s"),
+                modelXbrl.uuidError("b56cef66890d48c1ac92de80ea945f71",
                     modelObject=xmlElement,
                     resource=xmlElement.localName,
                     custFunction=name)
@@ -256,8 +252,7 @@ class VariableRef:
 def pushVarRef( sourceStr, loc, toks ):
     qname = ModelValue.qname(xmlElement, toks[0][1:], noPrefixIsNoNamespace=True)
     if qname is None:
-        modelXbrl.error("err:XPST0081",
-            _("QName prefix not defined for variable reference $%(variable)s"),
+        modelXbrl.uuidError("e1e9bac4a8204661b33894b7049d42c2",
             modelObject=xmlElement,
             variable=toks[0][1:])
         qname = ModelValue.qname(XbrlConst.xpath2err,"XPST0081") # use as qname to allow parsing to complete
@@ -630,7 +625,7 @@ def parse(modelObject, xpathExpression, element, name, traceType):
             if ((formulaOptions.traceVariableSetExpressionSource and traceType == Trace.VARIABLE_SET) or
                 (formulaOptions.traceVariableExpressionSource and traceType == Trace.VARIABLE) or
                 (formulaOptions.traceCallExpressionSource and traceType == Trace.CALL)):
-                modelXbrl.info("formula:trace", "Source %(name)s %(source)s",
+                modelXbrl.uuidInfo("f30516f963a8430697172befc94dcd23",
                 modelObject=element,
                 name=name,
                 source=normalizedExpr)
@@ -645,21 +640,19 @@ def parse(modelObject, xpathExpression, element, name, traceType):
             if ((formulaOptions.traceVariableSetExpressionCode and traceType == Trace.VARIABLE_SET) or
                 (formulaOptions.traceVariableExpressionCode and traceType == Trace.VARIABLE) or
                 (formulaOptions.traceCallExpressionCode and traceType == Trace.CALL)):
-                modelXbrl.info("formula:trace", _("Code %(name)s %(source)s"),
+                modelXbrl.uuidInfo("2c64bf8e0e514df388d13f07e394e555",
                 modelObject=element,
                 name=name,
                 source=exprStack)
                 
         except (ParseException, ParseSyntaxException) as err:
-            modelXbrl.error("err:XPST0003",
-                _("Parse error in %(name)s error: %(error)s \n%(source)s"),
+            modelXbrl.uuidError("69fa1e8c8400455bae36ef5a669cdcde",
                 modelObject=element,
                 name=name,
                 error=err, 
                 source=exceptionErrorIndication(err))
         except (ValueError) as err:
-            modelXbrl.error("parser:unableToParse",
-                _("Parsing terminated in %(name)s due to error: %(error)s \n%(source)s"),
+            modelXbrl.uuidError("7102dc927d72438a9ab97f1035535503",
                 modelObject=element,
                 name=name,
                 error=err, 

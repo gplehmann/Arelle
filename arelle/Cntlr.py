@@ -112,18 +112,35 @@ class Cntlr:
             gettext.install("arelle", self.localeDir)
 
         # set up a dictionary of error codes and extended error messages
-        self.errConfigPath = os.path.join(self.configDir, "error_messages.txt")
+        self.errConfigFile = "error_messages.csv"
+        self.errConfigPath = os.path.join(self.configDir, self.errConfigFile)
         self.errorMessages = {}
         if os.path.exists(self.errConfigPath):
-            with open(self.errConfigPath) as errConfigFile:
+            with open(self.errConfigPath) as fh:
                 lineCount = 0
-                for line in errConfigFile:
+                for line in fh:
                     lineCount += 1
-                    line = line.split("\t")
-                    if len(line) >= 2:
-                        self.errorMessages[line[0]] = line[1]
+                    line = line.strip().split("\t")
+                    if len(line) >= 3:
+                        self.errorMessages[line[0]] = []
+                        self.errorMessages[line[0]].append(_(line[1]))
+                        self.errorMessages[line[0]].append(tuple(line[2:]))
                     else:
                         print("Line {0} of config file {1} contains insufficient data or is not tab-delimited.".format(lineCount, self.errConfigPath))
+
+        self.extConfigFile = "extended_messages.csv"
+        self.extConfigPath = os.path.join(self.configDir, self.extConfigFile)
+        self.extendedMessages = {}
+        if os.path.exists(self.extConfigPath):
+            with open(self.extConfigPath) as fh:
+                lineCount = 0
+                for line in fh:
+                    lineCount += 1
+                    line = line.strip().split("\t")
+                    if len(line) >= 2:
+                        self.extendedMessages[line[0]] = _(line[1])
+                    else:
+                        print("Line {0} of config file {1} contains insufficient data or is not tab-delimited.".format(lineCount, self.extConfigPath))
 
         from arelle.WebCache import WebCache
         self.webCache = WebCache(self, self.config.get("proxySettings"))
