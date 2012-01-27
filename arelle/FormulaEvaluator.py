@@ -49,7 +49,7 @@ def evaluate(xpCtx, varSet, variablesInScope=False):
                      modelObject=varSet, xlinkLabel=varSet.xlinkLabel, result=result)
             msg = varSet.message(result)
             if msg:
-                #This error call looks like it is using the old method, with a logging level. I'm guessing it needs to be changed to an info() method call
+                #TODO: This error call looks like it is using the old method, with a logging level. I'm guessing it needs to be changed to an info() method call
                 xpCtx.modelXbrl.error(msg.evaluate(xpCtx), "info", "message:" + varSet.id)
         if xpCtx.formulaOptions.traceVariableSetExpressionResult and initialTraceCount == xpCtx.modelXbrl.logCountInfo:
                 xpCtx.modelXbrl.uuidInfo("b427a1a6dade4ae0b20b0b8e44b0c980",

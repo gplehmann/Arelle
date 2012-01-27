@@ -39,7 +39,7 @@ class ValidateXbrlCalcs:
         if not self.modelXbrl.contexts and not self.modelXbrl.facts:
             return # skip if no contexts or facts
         
-        self.modelXbrl.info("info","Validating calculations inferring %(inferMode)s",
+        self.modelXbrl.uuidInfo("7eabb8c9fdba47e6bbf685b6719c8350",
                             inferMode=_("precision") if self.inferPrecision else _("decimals"))
 
         # identify equal contexts

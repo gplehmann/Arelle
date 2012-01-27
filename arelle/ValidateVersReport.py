@@ -27,15 +27,13 @@ class ValidateVersReport():
         for DTSname in ("fromDTS", "toDTS"):
             DTSmodelXbrl = getattr(versReport, DTSname)
             if DTSmodelXbrl is None or DTSmodelXbrl.modelDocument is None:
-                self.modelVersReport.error("vere:invalidDTSIdentifier",
-                    _("%(dts)s is missing or not loaded"),
+                self.modelVersReport.uuidError("49199ff4f333420fbfdc6474b7911bb6",
                     modelObject=self, dts=DTSname)
             else:
                 # validate DTS
                 ValidateXbrl.ValidateXbrl(DTSmodelXbrl).validate(DTSmodelXbrl)
                 if len(DTSmodelXbrl.errors) > 0:
-                    self.modelVersReport.error("vere:invalidDTSIdentifier",
-                        _("%(dts) has errors: %(error)s"),
+                    self.modelVersReport.uuidError("96cea9f3a6a9495fbf674ac1441c3dcc",
                         modelObject=DTSmodelXbrl.modelDocument, dts=DTSname, error=DTSmodelXbrl.errors)
         # validate linkbases
         ValidateXbrl.ValidateXbrl(self.modelVersReport).validate(modelVersReport)
@@ -46,30 +44,25 @@ class ValidateVersReport():
             ref = assignmentRef.get("ref")
             if ref not in versReport.idObjects or \
                not isinstance(versReport.idObjects[ref], ModelVersObject.ModelAssignment):
-                    self.modelVersReport.error("vere:invalidAssignmentRef",
-                        _("AssignmentRef %(assignmentRef)s does not reference an assignment"),
+                    self.modelVersReport.uuidError("99cd2d743b5348c4b2e0339a9a4b251b",
                         modelObject=assignmentRef, assignmentRef=ref)
                     
         # check namespace renames
         for NSrename in versReport.namespaceRenameFrom.values():
             if NSrename.fromURI not in versReport.fromDTS.namespaceDocs:
-                self.modelVersReport.error("vere:invalidNamespaceMapping",
-                    _("NamespaceRename fromURI %(uri)s does not reference a schema in fromDTS"),
+                self.modelVersReport.uuidError("be82407bfb0c4915ac2cbd4a9a7e0fa3",
                     modelObject=self, uri=NSrename.fromURI)
             if NSrename.toURI not in versReport.toDTS.namespaceDocs:
-                self.modelVersReport.error("vere:invalidNamespaceMapping",
-                    _("NamespaceRename toURI %(uri)s does not reference a schema in toDTS"),
+                self.modelVersReport.uuidError("80b8e3babd7748ed99012379dd7bbc70",
                     modelObject=self, uri=NSrename.toURI)
                 
         # check role changes
         for roleChange in versReport.roleChanges.values():
             if roleChange.fromURI not in versReport.fromDTS.roleTypes:
-                self.modelVersReport.error("vere:invalidRoleChange",
-                    _("RoleChange fromURI %(uri)s does not reference a roleType in fromDTS"),
+                self.modelVersReport.uuidError("3748c77a7fcc4fe7aad0f706451668c1",
                     modelObject=self, uri=roleChange.fromURI)
             if roleChange.toURI not in versReport.toDTS.roleTypes:
-                self.modelVersReport.error("vere:invalidRoleChange",
-                    _("RoleChange toURI %(uri)s does not reference a roleType in toDTS"),
+                self.modelVersReport.uuidError("0f754f386a424b638b666a33b257ab17",
                     modelObject=self, uri=roleChange.toURI)
                 
         # check reportRefs
@@ -77,8 +70,7 @@ class ValidateVersReport():
         for reportRef in versReportElt.iterdescendants(tag="{http://xbrl.org/2010/versioning-base}reportRef"):
             xlinkType = reportRef.get("{http://www.w3.org/1999/xlink}type")
             if xlinkType != "simple":
-                self.modelVersReport.error("vere:invalidXlinkType",
-                    _("ReportRef xlink:type %(xlinkType)s must be \"simple\""),
+                self.modelVersReport.uuidError("fb5a6b06e4a0466ebe37b96b9fbc69b6",
                     modelObject=reportRef, xlinkType=xlinkType)
             # if existing it must be valid
             href = reportRef.get("{http://www.w3.org/1999/xlink}href")
@@ -86,13 +78,11 @@ class ValidateVersReport():
             
             arcrole = reportRef.get("{http://www.w3.org/1999/xlink}arcrole")
             if arcrole is None:
-                self.modelVersReport.error("vere:missingXlinkArcrole",
-                    _("ReportRef xlink:arcrole is missing"),
+                self.modelVersReport.uuidError("69d8dd11586b4f2f85b66bda037ee7e6",
                     modelObject=reportRef)
             else:
                 if arcrole != "http://xbrl.org/arcrole/2010/versioning/related-report":
-                    self.modelVersReport.error("vere:invalidXlinkArcrole",
-                        _("ReportRef xlink:arcrole %(arcrole)s is invalid"),
+                    self.modelVersReport.uuidError("2689eb03c3b64c7d8540b57ad206f58b",
                         modelObject=reportRef, arcrole=arcrole)
             
         if versReport.fromDTS and versReport.toDTS:
@@ -101,14 +91,12 @@ class ValidateVersReport():
                 if conceptChange.name != "conceptAdd" and \
                    (conceptChange.fromConcept is None or \
                     conceptChange.fromConcept.qname not in versReport.fromDTS.qnameConcepts):
-                    self.modelVersReport.error("vercbe:invalidConceptReference",
-                        _("%(event)s fromConcept %(concept)s does not reference a concept in fromDTS"),
+                    self.modelVersReport.uuidError("21f0ef390edc42deac2b067ba2b15444",
                         modelObject=conceptChange, event=conceptChange.name, concept=conceptChange.fromConceptQname) 
                 if conceptChange.name != "conceptDelete" and \
                    (conceptChange.toConcept is None or \
                     conceptChange.toConcept.qname not in versReport.toDTS.qnameConcepts):
-                    self.modelVersReport.error("vercbe:invalidConceptReference",
-                        _("%(event)s toConcept %(concept)s does not reference a concept in toDTS"),
+                    self.modelVersReport.uuidError("d46b06983fdc46f2a8b00241d5366dfd",
                         modelObject=conceptChange, event=conceptChange.name, concept=conceptChange.toConceptQname) 
                     
             # check concept changes of concept extended
@@ -120,23 +108,20 @@ class ValidateVersReport():
                 # fromConcept checks
                 if not conceptChange.name.endswith("Add"):
                     if not fromConcept is not None:
-                        self.modelVersReport.error("vercbe:invalidConceptReference",
-                            _("%(action)s %(event)s fromConcept %(concept)s does not reference a concept in fromDTS"),
+                        self.modelVersReport.uuidError("b286263b3cdc49ebaaebf79c72eba257",
                             modelObject=conceptChange, action=conceptChange.actionId,
                             event=conceptChange.name, concept=conceptChange.fromConceptQname) 
                     # tuple check
                     elif _("Child") in conceptChange.name and \
                         not versReport.fromDTS.qnameConcepts[fromConcept.qname] \
                             .isTuple:
-                        self.modelVersReport.error("vercbe:invalidConceptReference",
-                            _("%(action)s %(event)s fromConcept %(concept)s must be defined as a tuple"),
+                        self.modelVersReport.uuidError("697ede10ab6b43b7908b7a51250084b9",
                             modelObject=conceptChange, action=conceptChange.actionId,
                             event=conceptChange.name, concept=conceptChange.fromConceptQname) 
                     # resource check
                     elif "Label" in conceptChange.name:
                         if fromResource is None:
-                            self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                _("%(action)s %(event)s fromResource %(resource)s does not reference a resource in fromDTS"),
+                            self.modelVersReport.uuidError("f7a4442d7a2e4003b95239ae14d54640",
                                 modelObject=conceptChange, action=conceptChange.actionId,
                                 event=conceptChange.name, resource=conceptChange.fromResourceValue) 
                         else:
@@ -145,8 +130,7 @@ class ValidateVersReport():
                                 if relationship.qname != XbrlConst.qnLinkLabelArc or \
                                    relationship.parentQname != XbrlConst.qnLinkLabelLink or \
                                    fromResource.qname != XbrlConst.qnLinkLabel:
-                                    self.modelVersReport.error("vercee:invalidConceptLabelIdentifier",
-                                        _("%(action)s %(event)s fromResource %(resource)s for %(concept)s in fromDTS does not have expected link, arc, or label elements"),
+                                    self.modelVersReport.uuidError("4d0957e6e26841e0bc64c6affb12d5ec",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.fromResourceValue, concept=conceptChange.fromConceptQname)
                             else:
@@ -154,19 +138,16 @@ class ValidateVersReport():
                                 if relationship is not None:
                                     if relationship.qname != XbrlConst.qnGenArc or \
                                        fromResource.qname != XbrlConst.qnGenLabel:
-                                        self.modelVersReport.error("vercee:invalidConceptLabelIdentifier",
-                                            _("%(action)s %(event)s fromResource %(resource)s for %(concept)s in fromDTS does not have expected link, arc, or label elements"),
+                                        self.modelVersReport.uuidError("4d0957e6e26841e0bc64c6affb12d5ec",
                                             modelObject=conceptChange, action=conceptChange.actionId,
                                             event=conceptChange.name, resource=conceptChange.fromResourceValue, concept=conceptChange.fromConceptQname)
                                 else:
-                                    self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                        _("%(action)s %(event)s fromResource %(resource)s does not have a label relationship to {3} in fromDTS"),
+                                    self.modelVersReport.uuidError("2e3e8a455b4e429796ed62cd45c2ddb2",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.fromResourceValue)
                     elif "Reference" in conceptChange.name:
                         if fromResource is None:
-                            self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                _("%(action)s %(event)s fromResource %(resource)s does not reference a resource in fromDTS"),
+                            self.modelVersReport.uuidError("1e3889b6b6684f3194b516f78cda5f36",
                                 modelObject=conceptChange, action=conceptChange.actionId,
                                 event=conceptChange.name, resource=conceptChange.fromResourceValue)
                         else:
@@ -175,8 +156,7 @@ class ValidateVersReport():
                                 if relationship.qname != XbrlConst.qnLinkReferenceArc or \
                                    relationship.parentQname != XbrlConst.qnLinkReferenceLink or \
                                    fromResource.qname != XbrlConst.qnLinkReference:
-                                    self.modelVersReport.error("vercee:invalidConceptReferenceIdentifier",
-                                        _("%(action)s %(event)s fromResource %(resource)s for %(concept)s in fromDTS does not have expected link, arc, or label elements"),
+                                    self.modelVersReport.uuidError("519eae9c67db478eaa82eb41ca5325ff",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.fromResourceValue, concept=conceptChange.fromConceptQname)
                             else:
@@ -184,36 +164,31 @@ class ValidateVersReport():
                                 if relationship is not None:
                                     if relationship.qname != XbrlConst.qnGenArc or \
                                        fromResource.qname != XbrlConst.qnGenReference:
-                                        self.modelVersReport.error("vercee:invalidConceptReferenceIdentifier",
-                                            _("%(action)s %(event)s fromResource %(resource)s for %(concept)s  in fromDTS does not have expected link, arc, or label elements"),
+                                        self.modelVersReport.uuidError("519eae9c67db478eaa82eb41ca5325ff",
                                             modelObject=conceptChange, action=conceptChange.actionId,
                                             event=conceptChange.name, resource=conceptChange.fromResourceValue, concept=conceptChange.fromConceptQname)
                                 else:
-                                    self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                        _("%(action)s %(event)s fromResource %(resource)s does not have a reference relationship to %(concept)s in fromDTS"),
+                                    self.modelVersReport.uuidError("1b7ba287762a4ad3973d062cadc19e73",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.fromResourceValue, concept=conceptChange.fromConceptQname)
                              
                 # toConcept checks
                 if not conceptChange.name.endswith("Delete"):
                     if not toConcept is not None:
-                        self.modelVersReport.error("vercbe:invalidConceptReference",
-                            _("%(action)s %(event)s toConcept %(concept)s does not reference a concept in toDTS"),
+                        self.modelVersReport.uuidError("695368668d4945ddaffb0327ff26f9e1",
                             modelObject=conceptChange, action=conceptChange.actionId,
                             event=conceptChange.name, concept=conceptChange.toConceptQname)
                     # tuple check
                     elif "Child" in conceptChange.name and \
                         not versReport.toDTS.qnameConcepts[toConcept.qname] \
                             .isTuple:
-                        self.modelVersReport.error("vercbe:invalidConceptReference",
-                            _("%(action)s %(event)s toConcept %(concept)s must be defined as a tuple"),
+                        self.modelVersReport.uuidError("a31823e41691408faf7efd02b43f3608",
                             modelObject=conceptChange, action=conceptChange.actionId,
                             event=conceptChange.name, concept=conceptChange.toConceptQname)
                     # resource check
                     elif "Label" in conceptChange.name:
                         if toResource is None:
-                            self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                _("%(action)s %(event)s toResource %(resource)s for %(concept)s does not reference a resource in toDTS"),
+                            self.modelVersReport.uuidError("de72f687097c4d1a91c0145202af1855",
                                 modelObject=conceptChange, action=conceptChange.actionId,
                                 event=conceptChange.name, resource=conceptChange.toResourceValue, concept=conceptChange.toConceptQname)
                         else:
@@ -222,8 +197,7 @@ class ValidateVersReport():
                                 if relationship.qname != XbrlConst.qnLinkLabelArc or \
                                    relationship.parentQname != XbrlConst.qnLinkLabelLink or \
                                    toResource.qname != XbrlConst.qnLinkLabel:
-                                    self.modelVersReport.error("vercee:invalidConceptLabelIdentifier",
-                                        _("%(action)s %(event)s toResource %(resource)s for %(concept)s in toDTS does not have expected link, arc, or label elements"),
+                                    self.modelVersReport.uuidError("34af4b23e61848d988d5e1428aefeba7",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.toResourceValue, concept=conceptChange.toConceptQname)
                             else:
@@ -231,19 +205,16 @@ class ValidateVersReport():
                                 if relationship is not None:
                                     if relationship.qname != XbrlConst.qnGenArc or \
                                        toResource.qname != XbrlConst.qnGenLabel:
-                                        self.modelVersReport.error("vercee:invalidConceptLabelIdentifier",
-                                            _("%(action)s %(event)s toResource %(resource)s for %(concept)s in toDTS does not have expected link, arc, or label elements"),
+                                        self.modelVersReport.uuidError("34af4b23e61848d988d5e1428aefeba7",
                                             modelObject=conceptChange, action=conceptChange.actionId,
                                             event=conceptChange.name, resource=conceptChange.toResourceValue, concept=conceptChange.toConceptQname)
                                 else:
-                                    self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                        _("%(action)s %(event)s toResource %(resource)s does not have a label relationship to %(concept)s in toDTS"),
+                                    self.modelVersReport.uuidError("a8df9963bd434b9594b825bdd3d9b1cb",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.toResourceValue, concept=conceptChange.toConceptQname)
                     elif "Reference" in conceptChange.name:
                         if toResource is None:
-                            self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                _("%(action)s %(event)s toResource %(resource)s does not reference a resource in toDTS"),
+                            self.modelVersReport.uuidError("4e63ed7357ed4f5798a551ab222583d9",
                                 modelObject=conceptChange, action=conceptChange.actionId,
                                 event=conceptChange.name, resource=conceptChange.toResourceValue)
                         else:
@@ -252,8 +223,7 @@ class ValidateVersReport():
                                 if relationship.qname != XbrlConst.qnLinkReferenceArc or \
                                    relationship.parentQname != XbrlConst.qnLinkReferenceLink or \
                                    toResource.qname != XbrlConst.qnLinkReference:
-                                    self.modelVersReport.error("vercee:invalidConceptReferenceIdentifier",
-                                        _("%(action)s %(event)s toResource %(resource)s for %(concept)s in toDTS does not have expected link, arc, or label elements"),
+                                    self.modelVersReport.uuidError("b35c3c23fcc4412c9a9af37b45dc3157",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.toResourceValue, concept=conceptChange.toConceptQname)
                             else:
@@ -261,13 +231,11 @@ class ValidateVersReport():
                                 if relationship is not None:
                                     if relationship.qname != XbrlConst.qnGenArc or \
                                        toResource.qname != XbrlConst.qnGenReference:
-                                        self.modelVersReport.error("vercee:invalidConceptReferenceIdentifier",
-                                            _("%(action)s %(event)s toResource %(resource)s for %(concept)s in toDTS does not have expected link, arc, or label elements"),
+                                        self.modelVersReport.uuidError("b35c3c23fcc4412c9a9af37b45dc3157",
                                             modelObject=conceptChange, action=conceptChange.actionId,
                                             event=conceptChange.name, resource=conceptChange.toResourceValue, concept=conceptChange.toConceptQname)
                                 else:
-                                    self.modelVersReport.error("vercee:invalidContentResourceIdentifier",
-                                        _("%(action)s %(event)s toResource %(resource)s does not have a reference relationship to %(concept)s in toDTS"),
+                                    self.modelVersReport.uuidError("35bc7bb82e2a40ab9e70bcb18d757dc6",
                                         modelObject=conceptChange, action=conceptChange.actionId,
                                         event=conceptChange.name, resource=conceptChange.toResourceValue, concept=conceptChange.toConceptQname)
                         
@@ -276,8 +244,7 @@ class ValidateVersReport():
                     if versReport.toDTSqname(fromConcept.qname) != toConcept.qname and \
                        versReport.equivalentConcepts.get(fromConcept.qname) != toConcept.qname and \
                        toConcept.qname not in versReport.relatedConcepts.get(fromConcept.qname,[]):
-                        self.modelVersReport.error("vercee:invalidConceptCorrespondence",
-                            _("%(action)s %(event)s fromConcept %(conceptFrom)s and toConcept %(conceptTo)s must be equivalent or related"),
+                        self.modelVersReport.uuidError("abfc667d38d649f3aaba642323bf8061",
                             modelObject=conceptChange, action=conceptChange.actionId,
                             event=conceptChange.name, conceptFrom=conceptChange.fromConceptQname, conceptTo=conceptChange.toConceptQname)
     
@@ -287,18 +254,15 @@ class ValidateVersReport():
                         for attr in conceptAttributeEventAttributes[conceptChange.name]:
                             customAttributeQname = conceptChange.customAttributeQname(attr)
                             if not customAttributeQname or customAttributeQname.namespaceURI is None:
-                                self.modelVersReport.error("vercee:invalidAttributeChange",
-                                    _("%(action)s %(event)s %(attr)s $(attrName)s does not have a namespace"),
+                                self.modelVersReport.uuidError("abfc667d38d649f3aaba642323bf8061",
                                     modelObject=conceptChange, action=conceptChange.actionId,
                                     attr=attr, attrName=customAttributeQname)
                             elif customAttributeQname.namespaceURI in (XbrlConst.xbrli, XbrlConst.xsd):
-                                self.modelVersReport.error("vercee:illegalCustomAttributeEvent",
-                                    _("%(action)s %(event)s %(attr)s $(attrName)s has an invalid namespace"),
+                                self.modelVersReport.uuidError("413c0fada71b47ae845168dd883892f8",
                                     modelObject=conceptChange, action=conceptChange.actionId, event=conceptChange.name,
                                     attr=attr, attrName=customAttributeQname)
                     except KeyError:
-                        self.modelVersReport.info("arelle:eventNotRecognized",
-                            _("%(action)s %(event)s event is not recognized"),
+                        self.modelVersReport.uuidInfo("0781e4b5e2d94e99b027bf40cd8c5d18",
                             modelObject=conceptChange, action=conceptChange.actionId, event=conceptChange.name)
     
             # check relationship set changes
@@ -308,55 +272,47 @@ class ValidateVersReport():
                     if relationshipSet is not None:
                         relationshipSetValid = True
                         if relationshipSet.link and relationshipSet.link not in relationshipSet.dts.qnameConcepts:
-                            self.modelVersReport.error("verrelse:invalidLinkElementReference",
-                                _("%(event)s %(relSet)s link %(link)s does not reference an element in its DTS"),
+                            self.modelVersReport.uuidError("09f1239452c14bfa8f621ccb3a8eda0d",
                                 modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                 link=relationshipSet.link)
                             relationshipSetValid = False
                         if relationshipSet.arc and relationshipSet.arc not in relationshipSet.dts.qnameConcepts:
-                            self.modelVersReport.error("verrelse:invalidArcElementReference",
-                                _("%(event)s %(relSet)s arc %(arc) does not reference an element in its DTS"),
+                            self.modelVersReport.uuidError("aabad0af3cf344729a3caff56f6fd169",
                                 modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                 arc=relationshipSet.arc)
                             relationshipSetValid = False
                         if relationshipSet.linkrole and not (XbrlConst.isStandardRole(relationshipSet.linkrole) or
                                                              relationshipSet.linkrole in relationshipSet.dts.roleTypes):
-                            self.modelVersReport.error("verrelse:invalidLinkrole",
-                                _("%(event)s %(relSet)s linkrole %(linkrole)s does not reference an linkrole in its DTS"),
+                            self.modelVersReport.uuidError("c20767aebda94d0b9e323d43739dbba8",
                                 modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                 linkrole=relationshipSet.linkrole)
                             relationshipSetValid = False
                         if relationshipSet.arcrole and not (XbrlConst.isStandardArcrole(relationshipSet.arcrole) or
                                                             relationshipSet.arcrole in relationshipSet.dts.arcroleTypes):
-                            self.modelVersReport.error("verrelse:invalidArcrole",
-                                _("%(event)s %(relSet)s arcrole %(arcrole)s does not reference an arcrole in its DTS"),
+                            self.modelVersReport.uuidError("c12714052b0a48faa6a9065cb1637aa8",
                                 modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                 arcrole=relationshipSet.arcrole)
                             relationshipSetValid = False
                         for relationship in relationshipSet.relationships:
                             # fromConcept checks
                             if relationship.fromConcept is None:
-                                self.modelVersReport.error("verrelse:invalidConceptReference",
-                                    _("%(event)s %(relSet)s relationship fromConcept %(conceptFrom)s does not reference a concept in its DTS"),
+                                self.modelVersReport.uuidError("eb519a0bbb0143189d191b30e542970b",
                                     modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                     conceptFrom=relationship.fromName)
                                 relationshipSetValid = False
                             if relationship.toName and relationship.toConcept is None:
-                                self.modelVersReport.error("verrelse:invalidConceptReference",
-                                    _("%(event)s %(relSet)s relationship toConcept %(conceptTo)s does not reference a concept in its DTS"),
+                                self.modelVersReport.uuidError("75839520db154486b6a732f280896b39",
                                     modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                     conceptTo=relationship.toName)
                                 relationshipSetValid = False
                             if relationshipSetValid: # test that relations exist
                                 if relationship.fromRelationship is None:
                                     if relationship.toName:
-                                        self.modelVersReport.error("verrelse:invalidRelationshipReference",
-                                            _("%(event)s %(relSet)s no relationship found from fromConcept %(conceptFrom)s to toConcept %(conceptTo)s in its DTS"),
+                                        self.modelVersReport.uuidError("100d51782f6040808de31f43f7eab21b",
                                     modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                     conceptFrom=relationship.fromName, conceptTo=relationship.toName)
                                     else:
-                                        self.modelVersReport.error("verrelse:invalidRelationshipReference",
-                                            _("%(event)s %(relSet)s no relationship found fromConcept %(conceptFrom)s in its DTS"),
+                                        self.modelVersReport.uuidError("2ea990d8a1714bae9d93876840b09b84",
                                             modelObject=relSetChange, event=relSetChange.name, relSet=name,
                                             conceptFrom=relationship.fromName)
                                     

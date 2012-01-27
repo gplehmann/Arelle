@@ -262,8 +262,7 @@ class ModelXbrl:
                         scenarioElt = XmlUtil.addChild(newCntxElt, XbrlConst.xbrli, "scenario")
                     contextElt = scenarioElt
                 else:
-                    self.info("arelleLinfo",
-                        _("Create context, %(dimension)s, cannot determine context element, either no all relationship or validation issue"), 
+                    self.uuidInfo("4365ebfd3d4143748aef476709af005c",
                         modelObject=self, dimension=dimQname),
                     continue
                 dimConcept = self.qnameConcepts[dimQname]
@@ -513,7 +512,6 @@ class ModelXbrl:
                     numFiles += 1
                     # this has to be a relative path because the hrefs will break
                     zip.write(fileUri, os.path.basename(fileUri)) 
-        self.info("info",
-                  _("DTS of %(entryFile)s has %(numberOfFiles)s files packaged into %(packageOutputFile)s"), 
+        self.uuidInfo("5d781174a3ea42a999eaa50d915e9183",
                 modelObject=self,
                 entryFile=os.path.basename(entryFilename), packageOutputFile=pkgFilename, numberOfFiles=numFiles)

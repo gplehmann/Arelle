@@ -583,17 +583,15 @@ def checkElements(val, modelDocument, parent):
                                     val.modelXbrl.uuidError("7a5cf9f5f23e4859af3d6926cb4f89e5",
                                         modelObject=elt, refURI=refUri, xlinkHref=hrefUri)
                                 if val.validateSBRNL:
-                                    for attrName, errCode in (("{http://www.w3.org/1999/xlink}arcrole","SBR.NL.2.3.2.05"),("{http://www.w3.org/1999/xlink}role","SBR.NL.2.3.2.06")):
+                                    for attrName, errUuid in (("{http://www.w3.org/1999/xlink}arcrole","bdf2017b706742b28c074f03e0a2d353"),("{http://www.w3.org/1999/xlink}role","08c0ee1cd67d4e04a4432cf2acde15ab")):
                                         if elt.get(attrName):
-                                            val.modelXbrl.error(errCode,
-                                                _("Arcrole %(refURI)s arcroleRef %(xlinkHref)s must not have an %(attribute)s attribute"),
+                                            val.modelXbrl.uuidError(errUuid,
                                                 modelObject=elt, refURI=refUri, xlinkHref=hrefUri, attribute=attrName)
                             elif elt.localName == "roleRef":
                                 if val.validateSBRNL:
-                                    for attrName, errCode in (("{http://www.w3.org/1999/xlink}arcrole","SBR.NL.2.3.10.09"),("{http://www.w3.org/1999/xlink}role","SBR.NL.2.3.10.10")):
+                                    for attrName, errUuid in (("{http://www.w3.org/1999/xlink}arcrole","e8188bcfa14746b2b0ae9d419db833dd"),("{http://www.w3.org/1999/xlink}role","76edd41a9ff94dbdb979477858862ae7")):
                                         if elt.get(attrName):
-                                            val.modelXbrl.error(errCode,
-                                                _("Role %(refURI)s roleRef %(xlinkHref)s must not have an %(attribute)s attribute"),
+                                            val.modelXbrl.uuidError(errUuid,
                                                 modelObject=elt, refURI=refUri, xlinkHref=hrefUri, attribute=attrName)
                     if val.validateSBRNL:
                         if not xlinkType:
@@ -623,11 +621,10 @@ def checkElements(val, modelDocument, parent):
                     if xlinkType != "locator":
                         val.modelXbrl.uuidError("d70c7bd71cd4415b8ff7fceb1a6249d3",
                             modelObject=elt, element=elt.qname)
-                    for name, errName in (("{http://www.w3.org/1999/xlink}href","xbrl.3.5.3.7.2:linkLocHref"),
-                                          ("{http://www.w3.org/1999/xlink}label","xbrl.3.5.3.7.3:linkLocLabel")):
+                    for name, errUuid in (("{http://www.w3.org/1999/xlink}href","2a797c026d5849de90c9256393cd51bf"),
+                                          ("{http://www.w3.org/1999/xlink}label","f1b9f4fc3a9b4e71bc36c8a462e1427c")):
                         if elt.get(name) is None:
-                            val.modelXbrl.error(errName,
-                                _("Element %(element)s missing: %(attribute)s"),
+                            val.modelXbrl.uuidError(errUuid,
                                 modelObject=elt, element=elt.qname, attribute=name)
                 elif xlinkType == "resource":
                     if elt.localName == "footnote" and elt.get("{http://www.w3.org/XML/1998/namespace}lang") is None:
@@ -735,11 +732,10 @@ def checkElements(val, modelDocument, parent):
                     val.modelXbrl.uuidError("c2d7d21475644f19a7f7a0a9d6e551a8",
                         modelObject=elt, element=elt.qname)
             elif xlinkType == "arc":
-                for name, errName in (("{http://www.w3.org/1999/xlink}from", "xbrl.3.5.3.9.2:arcFrom"),
-                                      ("{http://www.w3.org/1999/xlink}to", "xbrl.3.5.3.9.2:arcTo")):
+                for name, errUuid in (("{http://www.w3.org/1999/xlink}from", "63fee5da01dc48b9a4e3b4b32c7dd1a5"),
+                                      ("{http://www.w3.org/1999/xlink}to", "17056b25a609463e89ecc0ceb0cdf12a")):
                     if not elt.get(name):
-                        val.modelXbrl.error(errName,
-                            _("Element %(element)s missing xlink:%(attribute)s"),
+                        val.modelXbrl.uuidError(errUuid,
                             modelObject=elt, element=elt.qname, attribute=name)
                 if val.modelXbrl.hasXDT and elt.get("{http://xbrl.org/2005/xbrldt}targetRole") is not None:
                     targetRole = elt.get("{http://xbrl.org/2005/xbrldt}targetRole")
@@ -905,10 +901,9 @@ def checkElements(val, modelDocument, parent):
                                     xlinkFrom=elt.get("{http://www.w3.org/1999/xlink}from"),
                                     xlinkTo=elt.get("{http://www.w3.org/1999/xlink}to"))
                             if val.validateSBRNL and arcrole in (XbrlConst.essenceAlias, XbrlConst.similarTuples, XbrlConst.requiresElement):
-                                val.modelXbrl.error({XbrlConst.essenceAlias: "SBR.NL.2.3.2.02",
-                                                  XbrlConst.similarTuples: "SBR.NL.2.3.2.03", 
-                                                  XbrlConst.requiresElement: "SBR.NL.2.3.2.04"}[arcrole],
-                                    _("DefinitionArc from %(xlinkFrom)s to %(xlinkTo)s has unauthorized arcrole %(arcrole)s"),
+                                val.modelXbrl.uuidError({XbrlConst.essenceAlias: "e59bace33210446cae1cc755e0ca6abf",
+                                                  XbrlConst.similarTuples: "8c0bb9e3c04641b895ae1f4c21a6fb3d",
+                                                  XbrlConst.requiresElement: "95384baa3b6f4bcfaf3d30019e76207e"}[arcrole],
                                     modelObject=elt, 
                                     xlinkFrom=elt.get("{http://www.w3.org/1999/xlink}from"),
                                     xlinkTo=elt.get("{http://www.w3.org/1999/xlink}to"), 
@@ -988,20 +983,18 @@ def checkElements(val, modelDocument, parent):
                                 if sl in schemaLocations:
                                     val.modelXbrl.uuidError("33db11d07fbc4debb475c7a4bf7481a7",
                                         modelObject=elt, schemaLocation=sl)
-                        for attrName, errCode in (("id", "SBR.NL.2.3.10.04"),
-                                                  ("{http://www.w3.org/2001/XMLSchema-instance}nil", "SBR.NL.2.3.10.05"),
-                                                  ("{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation", "SBR.NL.2.3.10.06"),
-                                                  ("{http://www.w3.org/2001/XMLSchema-instance}type", "SBR.NL.2.3.10.07")):
+                        for attrName, errUuid in (("id", "1f4ba7d1181049bf928e7653469ff642"),
+                                                  ("{http://www.w3.org/2001/XMLSchema-instance}nil", "0a9445cf2036483a9e2f42a2e8e18d97"),
+                                                  ("{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation", "6577877df0324b1895f854e4e263d019"),
+                                                  ("{http://www.w3.org/2001/XMLSchema-instance}type", "8db9011a74c94b9a8abd66092830f391")):
                             if elt.get(attrName) is not None: 
-                                val.modelXbrl.error(errCode,
-                                    _("Linkbase element %(element)s must not have attribute %(attribute)s"),
+                                val.modelXbrl.uuidError(errUuid,
                                     modelObject=elt, element=elt.qname, attribute=attrName)
-                    for attrName, errCode in (("{http://www.w3.org/1999/xlink}actuate", "SBR.NL.2.3.10.01"),
-                                              ("{http://www.w3.org/1999/xlink}show", "SBR.NL.2.3.10.02"),
-                                              ("{http://www.w3.org/1999/xlink}title", "SBR.NL.2.3.10.03")):
+                    for attrName, errUuid in (("{http://www.w3.org/1999/xlink}actuate", "39543ba11fe844afbb9733ce9908529d"),
+                                              ("{http://www.w3.org/1999/xlink}show", "9038bf6742c2414196d030749794a035"),
+                                              ("{http://www.w3.org/1999/xlink}title", "dedc257c5b0c454097493ef439657e38")):
                         if elt.get(attrName) is not None: 
-                            val.modelXbrl.error(errCode,
-                                _("Linkbase element %(element)s must not have attribute xlink:%(attribute)s"),
+                            val.modelXbrl.uuidError(errUuid,
                                 modelObject=elt, element=elt.qname, attribute=attrName)
     
             checkElements(val, modelDocument, elt)

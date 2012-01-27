@@ -79,7 +79,8 @@ class Validate:
         self.close()
 
     def validateTestcase(self, testcase):
-        self.modelXbrl.info("info", "Testcase", modelDocument=testcase)
+        self.modelXbrl.uuidInfo("8d80fea2c2df46f59e444e35df8700d2",
+            modelDocument=testcase)
         self.modelXbrl.viewModelObject(testcase.objectId())
         if hasattr(testcase, "testcaseVariations"):
             for modelTestcaseVariation in testcase.testcaseVariations:
@@ -92,7 +93,7 @@ class Validate:
                 inputDTSes = defaultdict(list)
                 baseForElement = testcase.baseForElement(modelTestcaseVariation)
                 # try to load instance document
-                self.modelXbrl.info("info", _("Variation %(id)s %(name)s: %(expected)s"),
+                self.modelXbrl.uuidInfo("4918899e88324cf3aa26c354ce4871b6",
                     modelObject=modelTestcaseVariation, id=modelTestcaseVariation.id, name=modelTestcaseVariation.name, expected=modelTestcaseVariation.expected)
                 for readMeFirstUri in modelTestcaseVariation.readMeFirstUris:
                     if isinstance(readMeFirstUri,tuple):
@@ -198,15 +199,13 @@ class Validate:
                             expectedInstance.close()
                         else:   # compare facts
                             if len(expectedInstance.facts) != len(formulaOutputInstance.facts):
-                                formulaOutputInstance.error("formula:resultFactCounts",
-                                    _("Formula output %(countFacts)s facts, expected %(expectedFacts)s facts"),
+                                formulaOutputInstance.uuidError("dd21ec8aa8d64baf91facc97184e0a64",
                                     modelXbrl=modelXbrl, countFacts=len(formulaOutputInstance.facts),
                                          expectedFacts=len(expectedInstance.facts))
                             else:
                                 for fact in expectedInstance.facts:
                                     if formulaOutputInstance.matchFact(fact) is None:
-                                        formulaOutputInstance.error("formula:expectedFactMissing",
-                                            _("Formula output missing expected fact %(fact)s"),
+                                        formulaOutputInstance.uuidError("dc43d4bafa7a43da965532ededb1a673",
                                             modelXbrl=fact, fact=fact.qname)
                         self.determineTestStatus(modelTestcaseVariation, formulaOutputInstance)
                         formulaOutputInstance.close()

@@ -233,7 +233,8 @@ class View:
                     XmlUtil.writexml(fh, self.xmlDoc, encoding="utf-8")
                 if not isinstance(self.outfile, FileNamedStringIO):
                     fh.close()
-                self.modelXbrl.info("info", _("Saved output %(type)s to %(file)s"), file=self.outfile, type=fileType)
+                self.modelXbrl.uuidInfo("4e191dc44f56497d86cf717830718339",
+                    file=self.outfile, type=fileType)
             except (IOError, EnvironmentError) as err:
                 self.modelXbrl.uuidException("b0b4d042e0c940b09f950e8f1b463226", file=self.outfile, type=fileType, error=err)
             self.modelXbrl = None

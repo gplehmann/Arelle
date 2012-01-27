@@ -106,7 +106,7 @@ def executeCallTest(val, name, callTuple, testTuple):
 def validate(val):
     for e in ("xbrl.5.1.4.3:cycles", "xbrlgene:violatedCyclesConstraint"):
         if e in val.modelXbrl.errors:
-            val.modelXbrl.info("info", _("Formula validation skipped due to %(error)s error"),
+            val.modelXbrl.uuidInfo("ada6ec06504d4cbba77721e902e0bd73",
                                 modelObject=val.modelXbrl, error=e)
             return
     
@@ -323,7 +323,7 @@ def validate(val):
                 undefinedVars = circularOrUndefVars - definedNamesSet 
                 varsCircularDep = circularOrUndefVars - undefinedVars
                 if len(undefinedVars) > 0:
-                    val.modelXbrl.error("23d69ebe08ef47729d9c37da52d78a3f",
+                    val.modelXbrl.uuidError("23d69ebe08ef47729d9c37da52d78a3f",
                         modelObject=modelVariableSet, xlinkLabel=modelVariableSet.xlinkLabel, 
                         nameFrom=varqname, nameTo=undefinedVars)
                 if len(varsCircularDep) > 0:
@@ -693,18 +693,16 @@ def checkFormulaRules(val, formula, nameVariables):
                     modelObject=formula, xlinkLabel=formula.xlinkLabel, concept=concept.qname, aspectPeriodType=aspectPeriodType, conceptPeriodType=concept.periodType)
         
         # check dimension elements
-        for eltName, dim, badUsageErr, missingSavErr in (("explicitDimension", "explicit", "xbrlfe:badUsageOfExplicitDimensionRule", "xbrlfe:missingSAVForExplicitDimensionRule"),
-                                                         ("typedDimension", "typed", "xbrlfe:badUsageOfTypedDimensionRule", "xbrlfe:missingSAVForTypedDimensionRule")):
+        for eltName, dim, badUsageUuid, missingSavUuid in (("explicitDimension", "explicit", "f5e14f9112764d7e9fafc5fcc138e476", "53eb7367247a42fca29419b0da0139ed"),
+                                                         ("typedDimension", "typed", "065c3f67cb6240cda3da5696add2b6db", "c978f58dfca3455d9c158ca59e5d956d")):
             for dimElt in XmlUtil.descendants(formula, XbrlConst.formula, eltName):
                 dimQname = qname(dimElt, dimElt.get("dimension"))
                 dimConcept = val.modelXbrl.qnameConcepts.get(dimQname)
                 if dimQname and (dimConcept is None or (not dimConcept.isExplicitDimension if dim == "explicit" else not dimConcept.isTypedDimension)):
-                    val.modelXbrl.error(badUsageErr,
-                        _("Formula %(xlinkLabel)s dimension attribute %(dimension)s on the %(dimensionType)s dimension rule contains a QName that does not identify an (dimensionType)s dimension."),
+                    val.modelXbrl.uuidError(badUsageUuid,
                         modelObject=formula, xlinkLabel=formula.xlinkLabel, dimensionType=dim, dimension=dimQname)
                 elif not XmlUtil.hasChild(dimElt, XbrlConst.formula, "*") and not formula.source(Aspect.DIMENSIONS, dimElt):
-                    val.modelXbrl.error(missingSavErr,
-                        _("Formula %(xlinkLabel)s %(dimension)s dimension rule does not have any child elements and does not have a SAV for the %(dimensionType)s dimension that is identified by its dimension attribute."),
+                    val.modelXbrl.uuidError(missingSavUuid,
                         modelObject=formula, xlinkLabel=formula.xlinkLabel, dimensionType=dim, dimension=dimQname)
         
         # check aspect model expectations
